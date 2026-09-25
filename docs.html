@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playhead docs</title>
-  <meta name="description" content="Install Playhead, connect TMDB, add sources, player shortcuts, profiles and sync, troubleshooting.">
+  <meta name="description" content="Install Playhead, the TMDB catalogue, add sources, player shortcuts, profiles and sync, troubleshooting.">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -24,7 +24,7 @@
     <nav class="toc">
       <a href="#install">Install</a>
       <a href="#first-launch">First launch</a>
-      <a href="#tmdb">Connect TMDB</a>
+      <a href="#tmdb">TMDB catalogue</a>
       <a href="#sources">Sources</a>
       <a href="#playing">Playing</a>
       <a href="#shortcuts">Keyboard shortcuts</a>
@@ -51,27 +51,29 @@
       <p>Right-click → Open no longer skips this check on macOS 15 and later. Alternative for Terminal users:
         <code>xattr -dr com.apple.quarantine /Applications/Playhead.app</code></p>
 
-      <h2 id="tmdb">Connect TMDB</h2>
-      <p>Posters, cast, descriptions and the full movie and series catalogue come from The Movie Database. Each person uses their own free key:</p>
+      <h2 id="tmdb">TMDB catalogue</h2>
+      <p>Posters, cast, descriptions and the full movie and series catalogue come from The Movie Database. It works out of the box: Playhead comes with a key built in.</p>
+      <p>You can use your own free key instead, for example if the built-in one ever stops working:</p>
       <ol>
-        <li>Create a free account at <a href="https://www.themoviedb.org/signup">themoviedb.org</a>.</li>
-        <li>Open <a href="https://www.themoviedb.org/settings/api">Settings → API</a> and request a key (personal use).</li>
-        <li>Copy either the <strong>API Key</strong> or the <strong>API Read Access Token</strong>.</li>
-        <li>In Playhead, paste it in the first onboarding step or later in <strong>Settings → Catalog</strong>, and click Connect.</li>
+        <li>In Playhead, open <strong>Settings → Catalog</strong> and click <strong>Open TMDB API page</strong>. Sign in, or create a free account.</li>
+        <li>Request a key (Developer, personal use) if you have none, then copy the <strong>API Key</strong> or the <strong>API Read Access Token</strong>.</li>
+        <li>Switch back to Playhead. It spots the key on the clipboard and offers to use it. You can also paste it into the field and click Connect.</li>
       </ol>
-      <p>Without a key Playhead shows a small demo catalogue of free Blender open movies.</p>
+      <p>Your own key replaces the built-in one. <strong>Remove key</strong> switches back.</p>
 
       <h2 id="sources">Sources</h2>
-      <p>Playhead has an indexer engine built in — no Prowlarr, Jackett or other server to run. It reads the same indexer definitions Prowlarr uses,
-        fetched from Prowlarr's public definitions repository the first time you use them and kept on your Mac.</p>
+      <p>Out of the box Playhead searches one source: the Internet Archive's collection of public-domain films. It ships with no other
+        sources or indexers configured; anything else is yours to add.</p>
+      <p>For that it has an indexer engine built in — no Prowlarr, Jackett or other server to run. It reads the same indexer definitions Prowlarr uses,
+        fetched from Prowlarr's public definitions repository when you add an indexer and kept on your Mac.</p>
       <ul>
         <li><strong>Settings → Sources</strong> lists your indexers first, with their status, response time and categories. <strong>Test</strong> / <strong>Test all</strong> checks them;
-          <strong>Add indexer</strong> searches the full catalogue; <strong>Update definitions</strong> fetches the latest versions. A set of popular public indexers is preselected during onboarding.</li>
+          <strong>Add indexer</strong> searches the catalogue for the indexer you want; <strong>Update definitions</strong> fetches the latest versions. None is added unless you add it.</li>
         <li>An indexer that keeps failing is paused for a while and retried automatically. Sites behind Cloudflare's browser check show as <em>blocked</em> — Playhead doesn't try to get around it.</li>
         <li>Indexers that need an account show which login they support; some login types aren't supported yet.</li>
         <li>Below them, <strong>Other sources</strong> keeps the Internet Archive (public-domain films, built in) and lets you add your own <strong>Torznab</strong> indexer (Prowlarr, Jackett) or a <strong>Stremio</strong> add-on URL.</li>
       </ul>
-      <p>You are responsible for what you search for and play.</p>
+      <p>You are responsible for the sources you add and for what you search for and play.</p>
       <p>On a movie or episode page, Playhead picks the best release for your quality preset (Settings → Quality: Fast start, Balanced, Best quality),
         checks the top candidates' swarms live, and shows the pick under <strong>Play</strong>. <strong>Choose source</strong> lists every release with its score and the reasons some were filtered out.</p>
 
@@ -118,7 +120,7 @@
       <ul>
         <li><strong>Cache</strong>: Playhead keeps at most the cache limit on disk while playing (1 GB by default, Settings → Cache), keeps a stopped title for 5 minutes so you can resume instantly, then removes it. Settings → Cache → Clear cache removes it now.</li>
         <li><strong>Uploading</strong>: like every BitTorrent client, Playhead shares pieces with other peers while it plays, capped at 1 MB/s by default (Settings → Network). Other peers can see your IP address.</li>
-        <li><strong>What leaves your Mac</strong>: TMDB requests (with your key), searches to your sources, BitTorrent traffic, and OpenSubtitles requests if you add a key. No analytics or tracking.</li>
+        <li><strong>What leaves your Mac</strong>: TMDB requests, searches to your sources, BitTorrent traffic, and OpenSubtitles requests if you add a key. No analytics or tracking.</li>
       </ul>
 
       <h2 id="troubleshooting">Troubleshooting</h2>
@@ -143,14 +145,14 @@
           upstream sources at <a href="https://github.com/mpv-player/mpv">mpv-player/mpv</a> and <a href="https://ffmpeg.org/download.html">ffmpeg.org</a>. You may replace these frameworks with your own builds.</li>
         <li><strong>Flutter</strong> (BSD-3-Clause), <strong>media_kit</strong> (MIT), <strong>librqbit</strong> (Apache-2.0), <strong>flutter_rust_bridge</strong> (MIT), and many smaller Dart and Rust libraries under permissive licences.</li>
       </ul>
-      <p>This product uses the TMDB API but is not endorsed or certified by TMDB. Movie and series data and images are provided by <a href="https://www.themoviedb.org">The Movie Database</a>.</p>
+      <p>This application uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB. Movie and series data and images are provided by <a href="https://www.themoviedb.org">The Movie Database</a>.</p>
     </article>
   </main>
 
   <footer>
     <div class="wrap">
       <span>Playhead test build.</span>
-      <span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>
+      <span class="tmdb"><img src="assets/tmdb-logo.svg" alt="TMDB" height="10"> This application uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.</span>
     </div>
   </footer>
 </body>

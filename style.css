@@ -110,3 +110,5 @@ footer {
 }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
 footer img.tmdb { height: 12px; display: inline-block; vertical-align: middle; margin-right: 6px; }
+
+footer .tmdb img{vertical-align:middle;margin-right:6px}
