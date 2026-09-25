@@ -62,8 +62,16 @@
       <p>Without a key Playhead shows a small demo catalogue of free Blender open movies.</p>
 
       <h2 id="sources">Sources</h2>
-      <p>Playhead searches the sources listed in <strong>Settings → Sources</strong> and ranks what they return. The Internet Archive (public-domain films) is built in.
-        You can add a <strong>Torznab</strong> indexer (for example your own Prowlarr or Jackett) or a <strong>Stremio</strong> add-on URL, and test each one from the same screen.</p>
+      <p>Playhead has an indexer engine built in — no Prowlarr, Jackett or other server to run. It reads the same indexer definitions Prowlarr uses,
+        fetched from Prowlarr's public definitions repository the first time you use them and kept on your Mac.</p>
+      <ul>
+        <li><strong>Settings → Sources</strong> lists your indexers first, with their status, response time and categories. <strong>Test</strong> / <strong>Test all</strong> checks them;
+          <strong>Add indexer</strong> searches the full catalogue; <strong>Update definitions</strong> fetches the latest versions. A set of popular public indexers is preselected during onboarding.</li>
+        <li>An indexer that keeps failing is paused for a while and retried automatically. Sites behind Cloudflare's browser check show as <em>blocked</em> — Playhead doesn't try to get around it.</li>
+        <li>Indexers that need an account show which login they support; some login types aren't supported yet.</li>
+        <li>Below them, <strong>Other sources</strong> keeps the Internet Archive (public-domain films, built in) and lets you add your own <strong>Torznab</strong> indexer (Prowlarr, Jackett) or a <strong>Stremio</strong> add-on URL.</li>
+      </ul>
+      <p>You are responsible for what you search for and play.</p>
       <p>On a movie or episode page, Playhead picks the best release for your quality preset (Settings → Quality: Fast start, Balanced, Best quality),
         checks the top candidates' swarms live, and shows the pick under <strong>Play</strong>. <strong>Choose source</strong> lists every release with its score and the reasons some were filtered out.</p>
 
@@ -117,7 +125,7 @@
       <h3>"Playhead can't be opened" / "damaged"</h3>
       <p>Follow <a href="#first-launch">First launch</a>. If macOS still refuses, run the <code>xattr</code> command there.</p>
       <h3>"No sources found"</h3>
-      <p>Check Settings → Sources: at least one source must be enabled and pass its Test. Public-domain titles are found through the Internet Archive; other titles need a source that carries them.</p>
+      <p>Check Settings → Sources: at least one indexer or source must be enabled and pass its Test. The first search after installing needs a moment while indexer definitions download.</p>
       <h3>It keeps buffering</h3>
       <p>The overlay says why. A slow or dead swarm is switched automatically after a short countdown; you can also pick another release under Choose source.</p>
       <h3>Start over</h3>
