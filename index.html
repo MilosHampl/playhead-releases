@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playhead</title>
-  <meta name="description" content="Playhead streams a torrent's video while it downloads — a native macOS player with a bounded cache, automatic source switching and a full-featured player.">
+  <meta name="description" content="Playhead streams video while it downloads, in a native macOS player. No login, no server, no data collection: everything runs on your Mac.">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,6 +23,7 @@
   <main>
     <div class="wrap hero" id="download">
       <h1>Play while it downloads.</h1>
+      <p class="pledge">No login. No server. No data collection. Everything runs on your Mac.</p>
       <p class="lead">Playhead streams a torrent's video in playback order through a small, bounded cache
         and plays it in a native macOS player. When a source stalls it switches to the next one on its own.</p>
       <div class="actions">
@@ -32,6 +33,37 @@
       </div>
       <p class="meta" id="meta">Test build · macOS 12 or later · Apple Silicon and Intel</p>
     </div>
+
+    <section class="private" id="private">
+      <div class="wrap">
+        <h2>Private by design</h2>
+        <div class="pillars">
+          <div class="pillar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0" /><path d="M4 4l16 16" /></svg>
+            <h3>No login</h3>
+            <p>No account and no sign-up. Open the app and browse; the movie and series catalogue is built in.</p>
+          </div>
+          <div class="pillar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1.5" /><rect x="4" y="14" width="16" height="6" rx="1.5" /><path d="M3 21 21 3" /></svg>
+            <h3>No server</h3>
+            <p>Nothing to host or run: no media server, no Prowlarr or Jackett. The indexer engine, the streamer and the player are all inside the app.</p>
+          </div>
+          <div class="pillar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3Z" /><path d="m9 12 2 2 4-4" /></svg>
+            <h3>No data collection</h3>
+            <p>No analytics, no tracking, no telemetry. Playhead has no servers of its own, so there is nowhere for your data to go.</p>
+          </div>
+          <div class="pillar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+            <h3>Edge only</h3>
+            <p>Search, source ranking, streaming and playback run on your Mac. Profiles, watch history and lists stay there too.</p>
+          </div>
+        </div>
+        <p class="leaves"><strong>What leaves your Mac:</strong> requests to The Movie Database for posters and details, searches to the
+          Internet Archive and to any sources you add, indexer definitions from GitHub when you add an indexer, and BitTorrent traffic
+          while you watch. Nothing else.</p>
+      </div>
+    </section>
 
     <div class="wrap">
       <figure class="shot" style="margin:0"><img src="assets/discover.jpg" alt="Playhead's Discover screen in the macOS window"></figure>
