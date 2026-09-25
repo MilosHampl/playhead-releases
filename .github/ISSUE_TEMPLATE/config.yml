@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Docs
+    url: https://miloshampl.github.io/playhead-releases/docs.html
+    about: Install, first launch, TMDB key, sources, shortcuts and troubleshooting.

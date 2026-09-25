@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playhead</title>
+  <meta name="description" content="Playhead streams a torrent's video while it downloads — a native macOS player with a bounded cache, automatic source switching and a full-featured player.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/logo.svg" alt="">Playhead</a>
+      <nav class="links">
+        <a href="#download">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://github.com/MilosHampl/playhead-releases/issues">Report a problem</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="download">
+      <h1>Play while it downloads.</h1>
+      <p class="lead">Playhead streams a torrent's video in playback order through a small, bounded cache
+        and plays it in a native macOS player. When a source stalls it switches to the next one on its own.</p>
+      <div class="actions">
+        <a class="btn primary" id="dl" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg">
+          Download for macOS</a>
+        <a class="btn" href="https://github.com/MilosHampl/playhead-releases/releases">All releases</a>
+      </div>
+      <p class="meta" id="meta">Test build · macOS 12 or later · Apple Silicon and Intel</p>
+    </div>
+
+    <div class="wrap">
+      <figure class="shot" style="margin:0"><img src="assets/discover.jpg" alt="Playhead's Discover screen in the macOS window"></figure>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="note">
+          <strong>First launch.</strong> This test build isn't notarized by Apple, so macOS blocks it the first time:
+          <ol class="steps">
+            <li>Open the DMG and drag Playhead into Applications, then open it. macOS says it can't verify it — click <strong>Done</strong>.</li>
+            <li>Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down to "Playhead was blocked" and click <strong>Open Anyway</strong>.</li>
+            <li>Confirm with your password or Touch ID. You only do this once.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>What it does</h2>
+        <div class="grid">
+          <div class="card"><h3>Starts in about a second</h3><p>Downloads the pieces just ahead of the playhead, so a good source starts playing almost at once, and seeks land in a few seconds.</p></div>
+          <div class="card"><h3>Bounded disk use</h3><p>Keeps a fixed-size cache (1 GB by default) no matter how big the file is, and removes it when you stop.</p></div>
+          <div class="card"><h3>Picks a healthy source</h3><p>Ranks releases by quality and checks their swarms live before playing; if one dies mid-film it switches to the next at the same moment.</p></div>
+          <div class="card"><h3>A proper player</h3><p>Hardware decoding, subtitles (SRT, ASS, PGS) with styling, audio and subtitle delay, chapters, mini player, keyboard shortcuts.</p></div>
+          <div class="card"><h3>Rich details</h3><p>Cast, crew, facts, trailers and collections from The Movie Database, with your own free API key.</p></div>
+          <div class="card"><h3>Profiles</h3><p>Separate watch history and lists per person, a guest mode, export to a file and sync between Macs through a folder.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap shots">
+        <figure class="shot" style="margin:0"><img src="assets/detail.jpg" alt="Detail page with ranked sources"><figcaption>Detail page with the best source picked</figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="assets/player.jpg" alt="Player with its menu open"><figcaption>Player menu: tracks, speed, aspect, chapters, sleep timer</figcaption></figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Help and feedback</h2>
+        <p style="color:var(--text-2);margin:0">Read the <a href="docs.html">docs</a> for setup and tips.
+          Found a bug or want something? <a href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Open an issue</a> —
+          include the version from Settings → About and what you clicked.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Playhead test build. Android is planned.</span>
+      <span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>
+      <span><a href="docs.html#licences">Open-source components</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Show the latest release's version and size; the static link above works without this.
+    fetch('https://api.github.com/repos/MilosHampl/playhead-releases/releases/latest')
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(rel => {
+        const dmg = (rel.assets || []).find(a => a.name.endsWith('.dmg'));
+        const date = new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+        const size = dmg ? ` · ${Math.round(dmg.size / 1048576)} MB` : '';
+        document.getElementById('meta').textContent =
+          `${rel.name || rel.tag_name} · ${date}${size} · macOS 12 or later · Apple Silicon and Intel`;
+        if (dmg) document.getElementById('dl').href = dmg.browser_download_url;
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>

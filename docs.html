@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playhead docs</title>
+  <meta name="description" content="Install Playhead, connect TMDB, add sources, player shortcuts, profiles and sync, troubleshooting.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/logo.svg" alt="">Playhead</a>
+      <nav class="links">
+        <a href="./#download">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://github.com/MilosHampl/playhead-releases/issues">Report a problem</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap docs">
+    <nav class="toc">
+      <a href="#install">Install</a>
+      <a href="#first-launch">First launch</a>
+      <a href="#tmdb">Connect TMDB</a>
+      <a href="#sources">Sources</a>
+      <a href="#playing">Playing</a>
+      <a href="#shortcuts">Keyboard shortcuts</a>
+      <a href="#profiles">Profiles and sync</a>
+      <a href="#disk">Disk and network</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#report">Reporting a problem</a>
+      <a href="#licences">Open-source components</a>
+    </nav>
+
+    <article>
+      <h2 id="install">Install</h2>
+      <p>Download <a href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg">Playhead-macos.dmg</a>,
+        open it and drag <strong>Playhead</strong> into <strong>Applications</strong>. It needs macOS 12 or later and runs natively on Apple Silicon and Intel Macs.</p>
+      <p>To update, download the new DMG and replace the app in Applications. Your profiles, progress and settings are kept.</p>
+
+      <h2 id="first-launch">First launch</h2>
+      <p>Test builds aren't notarized by Apple, so macOS blocks the first launch:</p>
+      <ol>
+        <li>Open Playhead from Applications. When macOS says it can't verify it, click <strong>Done</strong>.</li>
+        <li>Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down to "Playhead was blocked" and click <strong>Open Anyway</strong>.</li>
+        <li>Confirm with your password or Touch ID.</li>
+      </ol>
+      <p>Right-click → Open no longer skips this check on macOS 15 and later. Alternative for Terminal users:
+        <code>xattr -dr com.apple.quarantine /Applications/Playhead.app</code></p>
+
+      <h2 id="tmdb">Connect TMDB</h2>
+      <p>Posters, cast, descriptions and the full movie and series catalogue come from The Movie Database. Each person uses their own free key:</p>
+      <ol>
+        <li>Create a free account at <a href="https://www.themoviedb.org/signup">themoviedb.org</a>.</li>
+        <li>Open <a href="https://www.themoviedb.org/settings/api">Settings → API</a> and request a key (personal use).</li>
+        <li>Copy either the <strong>API Key</strong> or the <strong>API Read Access Token</strong>.</li>
+        <li>In Playhead, paste it in the first onboarding step or later in <strong>Settings → Catalog</strong>, and click Connect.</li>
+      </ol>
+      <p>Without a key Playhead shows a small demo catalogue of free Blender open movies.</p>
+
+      <h2 id="sources">Sources</h2>
+      <p>Playhead searches the sources listed in <strong>Settings → Sources</strong> and ranks what they return. The Internet Archive (public-domain films) is built in.
+        You can add a <strong>Torznab</strong> indexer (for example your own Prowlarr or Jackett) or a <strong>Stremio</strong> add-on URL, and test each one from the same screen.</p>
+      <p>On a movie or episode page, Playhead picks the best release for your quality preset (Settings → Quality: Fast start, Balanced, Best quality),
+        checks the top candidates' swarms live, and shows the pick under <strong>Play</strong>. <strong>Choose source</strong> lists every release with its score and the reasons some were filtered out.</p>
+
+      <h2 id="playing">Playing</h2>
+      <ul>
+        <li><strong>Buffering</strong> shows its cause ("Finding peers…", "3.1 of 12 Mb/s needed"). If a source keeps stalling, Playhead counts down and switches to the next-best source at the same position.</li>
+        <li><strong>Subtitles</strong>: embedded tracks are picked by your preferred language (Settings → Subtitles). Drag an <code>.srt</code>, <code>.ass</code> or <code>.vtt</code> file onto the player to add one. Size, colour, background and position are in the player's settings.</li>
+        <li><strong>Right-click</strong> the video for the menu: audio and subtitle tracks, speed, aspect and zoom, chapters, sleep timer, mini player, screenshot.</li>
+        <li><strong>Continue watching</strong>: progress is saved while you watch; a title counts as watched at 90 %.</li>
+      </ul>
+
+      <h2 id="shortcuts">Keyboard shortcuts</h2>
+      <p>Press <kbd>?</kbd> in the player to see this list.</p>
+      <table class="keys">
+        <tr><td><kbd>Space</kbd> / <kbd>K</kbd></td><td>Play / pause</td></tr>
+        <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Back / forward 5 s</td></tr>
+        <tr><td><kbd>J</kbd> <kbd>L</kbd></td><td>Back / forward 10 s</td></tr>
+        <tr><td><kbd>⇧←</kbd> <kbd>⇧→</kbd></td><td>Back / forward 1 min</td></tr>
+        <tr><td><kbd>Page Up</kbd> <kbd>Page Down</kbd></td><td>Previous / next chapter</td></tr>
+        <tr><td><kbd>T</kbd></td><td>Jump to time</td></tr>
+        <tr><td><kbd>S</kbd></td><td>Skip intro / credits</td></tr>
+        <tr><td><kbd>,</kbd> <kbd>.</kbd></td><td>Previous / next frame</td></tr>
+        <tr><td><kbd>[</kbd> <kbd>]</kbd> <kbd>⌫</kbd></td><td>Slower / faster / normal speed</td></tr>
+        <tr><td><kbd>↑</kbd> <kbd>↓</kbd> <kbd>M</kbd></td><td>Volume up / down / mute</td></tr>
+        <tr><td><kbd>A</kbd> <kbd>C</kbd></td><td>Next audio / subtitle track</td></tr>
+        <tr><td><kbd>Z</kbd> <kbd>X</kbd></td><td>Subtitles earlier / later (100 ms)</td></tr>
+        <tr><td><kbd>⇧Z</kbd> <kbd>⇧X</kbd></td><td>Audio earlier / later (50 ms)</td></tr>
+        <tr><td><kbd>F</kbd> or double-click</td><td>Fullscreen</td></tr>
+        <tr><td><kbd>P</kbd></td><td>Mini player (always on top)</td></tr>
+        <tr><td><kbd>R</kbd></td><td>Aspect / zoom</td></tr>
+        <tr><td><kbd>⇧S</kbd></td><td>Screenshot to Pictures/Playhead</td></tr>
+        <tr><td><kbd>N</kbd></td><td>Next episode</td></tr>
+        <tr><td><kbd>I</kbd></td><td>Stats for nerds</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Exit fullscreen / close</td></tr>
+      </table>
+
+      <h2 id="profiles">Profiles and sync</h2>
+      <p>Each profile has its own watch history, My List and playback preferences; switch at the bottom of the sidebar.
+        <strong>Guest</strong> lets someone watch without keeping anything.</p>
+      <p><strong>Settings → Profiles &amp; data</strong> exports everything to one file and imports it back (API keys only if you choose to include them).
+        <strong>Sync</strong> keeps several Macs in step through a folder you already sync — iCloud Drive, Dropbox or Syncthing; the newest change wins.</p>
+
+      <h2 id="disk">Disk and network</h2>
+      <ul>
+        <li><strong>Cache</strong>: Playhead keeps at most the cache limit on disk while playing (1 GB by default, Settings → Cache), keeps a stopped title for 5 minutes so you can resume instantly, then removes it. Settings → Cache → Clear cache removes it now.</li>
+        <li><strong>Uploading</strong>: like every BitTorrent client, Playhead shares pieces with other peers while it plays, capped at 1 MB/s by default (Settings → Network). Other peers can see your IP address.</li>
+        <li><strong>What leaves your Mac</strong>: TMDB requests (with your key), searches to your sources, BitTorrent traffic, and OpenSubtitles requests if you add a key. No analytics or tracking.</li>
+      </ul>
+
+      <h2 id="troubleshooting">Troubleshooting</h2>
+      <h3>"Playhead can't be opened" / "damaged"</h3>
+      <p>Follow <a href="#first-launch">First launch</a>. If macOS still refuses, run the <code>xattr</code> command there.</p>
+      <h3>"No sources found"</h3>
+      <p>Check Settings → Sources: at least one source must be enabled and pass its Test. Public-domain titles are found through the Internet Archive; other titles need a source that carries them.</p>
+      <h3>It keeps buffering</h3>
+      <p>The overlay says why. A slow or dead swarm is switched automatically after a short countdown; you can also pick another release under Choose source.</p>
+      <h3>Start over</h3>
+      <p>Quit Playhead and delete <code>~/Library/Containers/com.miloshampl.playhead</code> — this removes all profiles, progress and settings (export first if you want to keep them).</p>
+
+      <h2 id="report">Reporting a problem</h2>
+      <p><a href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Open an issue</a> with the version (Settings → About), your macOS version and Mac model,
+        what you did, what you expected, and what happened. A screenshot or screen recording helps a lot.</p>
+
+      <h2 id="licences">Open-source components</h2>
+      <p>Playhead © 2026 Milos Hampl. It is built with open-source software, including:</p>
+      <ul>
+        <li><strong>mpv</strong> (built with <code>-Dgpl=false</code>, LGPL-2.1-or-later) and <strong>FFmpeg 6.0</strong> (LGPL-3.0-or-later, without GPL or non-free parts), dynamically linked as separate frameworks inside the app.
+          The exact builds and their sources: <a href="https://github.com/media-kit/libmpv-darwin-build/releases/tag/v0.7.3">media-kit/libmpv-darwin-build v0.7.3</a> (<code>video-full</code>);
+          upstream sources at <a href="https://github.com/mpv-player/mpv">mpv-player/mpv</a> and <a href="https://ffmpeg.org/download.html">ffmpeg.org</a>. You may replace these frameworks with your own builds.</li>
+        <li><strong>Flutter</strong> (BSD-3-Clause), <strong>media_kit</strong> (MIT), <strong>librqbit</strong> (Apache-2.0), <strong>flutter_rust_bridge</strong> (MIT), and many smaller Dart and Rust libraries under permissive licences.</li>
+      </ul>
+      <p>This product uses the TMDB API but is not endorsed or certified by TMDB. Movie and series data and images are provided by <a href="https://www.themoviedb.org">The Movie Database</a>.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Playhead test build.</span>
+      <span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>
+    </div>
+  </footer>
+</body>
+</html>
