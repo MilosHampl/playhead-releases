@@ -6,26 +6,27 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 4)</title>
-      <pubDate>Tue, 29 Sep 2026 08:26:52 +0000</pubDate>
-      <sparkle:version>4</sparkle:version>
+      <title>Playhead 0.1.0 (build 5)</title>
+      <pubDate>Tue, 29 Sep 2026 14:14:08 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.4</link>
-      <description sparkle:format="markdown"><![CDATA[### Automatic updates
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.5</link>
+      <description sparkle:format="markdown"><![CDATA[### What's new
 
-Playhead now keeps itself up to date.
+- **Playhead for Windows.** Playhead now runs on 64-bit Windows 10 and 11 as well as macOS; the Windows download is on the Playhead page.
+- **On the Mac**, this is the first update delivered automatically. Nothing else changed.
 
-- **On macOS**, Playhead checks for a new version at launch and once a day. When one is out, it shows the release notes and an **Install Update** button. It then downloads the update, checks its signature, installs it and relaunches.
-- Settings → About → Updates has **Check now**, a switch for the automatic check, and an option to install updates automatically when Playhead quits.
-- The check downloads one small file from the Playhead download page. Nothing about you is sent.
+### Installing on Windows
 
-**Install this build by hand once** (test build 3 can't update itself). Every build after this one arrives automatically.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.4/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="Pt05El4NW7AmuUNkqdLov3SucAgbVFYCYS0GtEcszYAHj+RF4Avwg1D/ihvgwdGqHkvXjrgLlOQ3CQIYOEnSBA==" length="83023932" />
+- Run **Playhead-windows-setup.exe**. It installs for your user only, with no administrator prompt.
+- The installer isn't code-signed yet, so the first time SmartScreen says "Windows protected your PC": click **More info → Run anyway**.
+- After that it keeps itself up to date, like the Mac version.]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.5/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="SxxpJeVKZg9t2pcuiWx7c101fAmz1cPKjwciJ2frBDRa2JXirfss/mkxCQNAAjb5qaTZ064RxFAiIVR2SMtWDA==" length="82383216" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: q3f8TX94zt3Uoy9ekxWI7Cd++HdNEWnb8xFBEwU0/DkCxpBDcHBQAZFxhdavbTa23Kei17pPh6dcaa8chFdHBQ==
-length: 1826
+edSignature: dV99srMZXE6LSfRxbMTXaH+Lm4dUPJvKD0XfLVG1m/QW3ff0naESZqFn122+/d6MhfVka51csxj7mBiXZlvPCQ==
+length: 1730
 -->

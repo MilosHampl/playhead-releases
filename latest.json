@@ -2,16 +2,16 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 4,
-  "tag": "v0.1.0-test.4",
-  "publishedAt": "2026-09-29T08:26:52Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.4",
-  "notes": "### Automatic updates\n\nPlayhead now keeps itself up to date.\n\n- **On macOS**, Playhead checks for a new version at launch and once a day. When one is out, it shows the release notes and an **Install Update** button. It then downloads the update, checks its signature, installs it and relaunches.\n- Settings → About → Updates has **Check now**, a switch for the automatic check, and an option to install updates automatically when Playhead quits.\n- The check downloads one small file from the Playhead download page. Nothing about you is sent.\n\n**Install this build by hand once** (test build 3 can't update itself). Every build after this one arrives automatically.\n",
+  "build": 5,
+  "tag": "v0.1.0-test.5",
+  "publishedAt": "2026-09-29T14:14:09Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.5",
+  "notes": "### What's new\n\n- **Playhead for Windows.** Playhead now runs on 64-bit Windows 10 and 11 as well as macOS; the Windows download is on the Playhead page.\n- **On the Mac**, this is the first update delivered automatically. Nothing else changed.\n\n### Installing on Windows\n\n- Run **Playhead-windows-setup.exe**. It installs for your user only, with no administrator prompt.\n- The installer isn't code-signed yet, so the first time SmartScreen says \"Windows protected your PC\": click **More info → Run anyway**.\n- After that it keeps itself up to date, like the Mac version.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.4/Playhead-macos.dmg",
-      "sha256": "b5b67be7abdbda463ebd15dba1803353e74a85e3cc7cb25e02e0523573602012",
-      "size": 83023932
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.5/Playhead-macos.dmg",
+      "sha256": "00f8a6a6907e54ca0e82a9dcbdedb5a58eb74e48cfbfd223cb00ad62447fb051",
+      "size": 82383216
     }
   }
 }
