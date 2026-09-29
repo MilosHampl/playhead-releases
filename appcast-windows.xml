@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Playhead for Windows</title>
+    <link>https://miloshampl.github.io/playhead-releases/</link>
+    <description>Playhead update feed (Windows)</description>
+    <language>en</language>
+    <item>
+      <title>Playhead 0.1.0 (build 5)</title>
+      <pubDate>Tue, 29 Sep 2026 14:44:20 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.5</link>
+      <description><![CDATA[<h4>What's new</h4>
+<ul>
+<li><strong>Playhead for Windows.</strong> Playhead now runs on 64-bit Windows 10 and 11 as well as macOS; the Windows download is on the Playhead page.</li>
+<li><strong>On the Mac</strong>, this is the first update delivered automatically. Nothing else changed.</li>
+</ul>
+<h4>Installing on Windows</h4>
+<ul>
+<li>Run <strong>Playhead-windows-setup.exe</strong>. It installs for your user only, with no administrator prompt.</li>
+<li>The installer isn't code-signed yet, so the first time SmartScreen says "Windows protected your PC": click <strong>More info → Run anyway</strong>.</li>
+<li>After that it keeps itself up to date, like the Mac version.</li>
+</ul>]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.5/Playhead-windows-setup.exe" type="application/octet-stream" sparkle:os="windows" sparkle:installerArguments="/SILENT /SP- /SUPPRESSMSGBOXES /NORESTART" sparkle:edSignature="dzfhUX7mLV3u8Dd7ioxkk+oGix+U497HZFPdjfYQSKCCTPVZi2CzLOaa8YLyUTvbKvG7x7AI99sq0Feyaiv6Aw==" length="36936246" />
+    </item>
+  </channel>
+</rss>

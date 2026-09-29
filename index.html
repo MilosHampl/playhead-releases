@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playhead</title>
-  <meta name="description" content="Playhead streams video while it downloads, in a native macOS player. No login, no server, no data collection: everything runs on your Mac.">
+  <meta name="description" content="Playhead streams video while it downloads, in a native player on macOS and Windows. No login, no server, no data collection: everything runs on your Mac.">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,15 +23,17 @@
   <main>
     <div class="wrap hero" id="download">
       <h1>Play while it downloads.</h1>
-      <p class="pledge">No login. No server. No data collection. Everything runs on your Mac.</p>
+      <p class="pledge">No login. No server. No data collection. Everything runs on your computer.</p>
       <p class="lead">Playhead streams a torrent's video in playback order through a small, bounded cache
-        and plays it in a native macOS player. When a source stalls it switches to the next one on its own.</p>
+        and plays it in a native player. When a source stalls it switches to the next one on its own.</p>
       <div class="actions">
-        <a class="btn primary" id="dl" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg">
+        <a class="btn primary" id="dl-mac" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg">
           Download for macOS</a>
+        <a class="btn" id="dl-win" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-windows-setup.exe">
+          Download for Windows</a>
         <a class="btn" href="https://github.com/MilosHampl/playhead-releases/releases">All releases</a>
       </div>
-      <p class="meta" id="meta">Test build · macOS 12 or later · Apple Silicon and Intel</p>
+      <p class="meta" id="meta">Test build · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · updates itself</p>
     </div>
 
     <section class="private" id="private">
@@ -56,10 +58,10 @@
           <div class="pillar">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
             <h3>Edge only</h3>
-            <p>Search, source ranking, streaming and playback run on your Mac. Profiles, watch history and lists stay there too.</p>
+            <p>Search, source ranking, streaming and playback run on your computer. Profiles, watch history and lists stay there too.</p>
           </div>
         </div>
-        <p class="leaves"><strong>What leaves your Mac:</strong> requests to The Movie Database for posters and details, searches to the
+        <p class="leaves"><strong>What leaves your computer:</strong> requests to The Movie Database for posters and details, searches to the
           Internet Archive and to any sources you add, indexer definitions from GitHub when you add an indexer, a check for a new
           version at launch and once a day, and BitTorrent traffic while you watch. Nothing else. The version check downloads one small static
           file from this site — no account, no identifiers, no analytics — and can be turned off in Settings → About → Updates.</p>
@@ -73,12 +75,15 @@
     <section>
       <div class="wrap">
         <div class="note">
-          <strong>First launch.</strong> This test build isn't notarized by Apple, so macOS blocks it the first time:
+          <strong>First launch on macOS.</strong> This test build isn't notarized by Apple, so macOS blocks it the first time:
           <ol class="steps">
             <li>Open the DMG and drag Playhead into Applications, then open it. macOS says it can't verify it — click <strong>Done</strong>.</li>
             <li>Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down to "Playhead was blocked" and click <strong>Open Anyway</strong>.</li>
             <li>Confirm with your password or Touch ID. You only do this once.</li>
           </ol>
+          <strong>First launch on Windows.</strong> The installer isn't code-signed yet, so SmartScreen says "Windows protected your PC":
+          click <strong>More info → Run anyway</strong>. It installs for your user only, with no administrator prompt.
+          <p style="margin:10px 0 0">After that, Playhead updates itself: when a new build is out it shows what changed and installs it with one click.</p>
         </div>
       </div>
     </section>
@@ -123,16 +128,24 @@
   </footer>
 
   <script>
-    // Show the latest release's version and size; the static link above works without this.
+    // Windows visitors get the Windows download as the primary button.
+    if (/Windows/.test(navigator.userAgent)) {
+      const mac = document.getElementById('dl-mac'), win = document.getElementById('dl-win');
+      mac.classList.remove('primary'); win.classList.add('primary'); win.after(mac);
+    }
+    // Show the latest release's version; the static links above work without this.
     fetch('https://api.github.com/repos/MilosHampl/playhead-releases/releases/latest')
       .then(r => r.ok ? r.json() : Promise.reject(r.status))
       .then(rel => {
-        const dmg = (rel.assets || []).find(a => a.name.endsWith('.dmg'));
+        const assets = rel.assets || [];
+        const dmg = assets.find(a => a.name.endsWith('.dmg'));
+        const exe = assets.find(a => a.name.endsWith('.exe'));
         const date = new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
-        const size = dmg ? ` · ${Math.round(dmg.size / 1048576)} MB` : '';
         document.getElementById('meta').textContent =
-          `${rel.name || rel.tag_name} · ${date}${size} · macOS 12 or later · Apple Silicon and Intel`;
-        if (dmg) document.getElementById('dl').href = dmg.browser_download_url;
+          `${rel.name || rel.tag_name} · ${date} · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · updates itself`;
+        if (dmg) document.getElementById('dl-mac').href = dmg.browser_download_url;
+        if (exe) document.getElementById('dl-win').href = exe.browser_download_url;
+        else document.getElementById('dl-win').remove();
       })
       .catch(() => {});
   </script>

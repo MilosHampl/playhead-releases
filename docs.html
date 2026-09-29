@@ -37,12 +37,17 @@
 
     <article>
       <h2 id="install">Install</h2>
-      <p>Download <a href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg">Playhead-macos.dmg</a>,
+      <p><strong>macOS:</strong> download <a href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg">Playhead-macos.dmg</a>,
         open it and drag <strong>Playhead</strong> into <strong>Applications</strong>. It needs macOS 12 or later and runs natively on Apple Silicon and Intel Macs.</p>
-      <p>To update, download the new DMG and replace the app in Applications. Your profiles, progress and settings are kept.</p>
+      <p><strong>Windows:</strong> download <a href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-windows-setup.exe">Playhead-windows-setup.exe</a>
+        and run it. It needs 64-bit Windows 10 or 11 and installs for your user only (no administrator prompt).</p>
+      <p><strong>Updates</strong> install themselves: when a new build is out, Playhead shows what changed and an <strong>Install Update</strong> button,
+        downloads it, checks its signature and restarts into the new version. Your profiles, progress and settings are kept.
+        Settings → About → Updates has <strong>Check now</strong> and the switches. (Test build 3 and older can't update themselves: install a newer build by hand once.)</p>
 
       <h2 id="first-launch">First launch</h2>
-      <p>Test builds aren't notarized by Apple, so macOS blocks the first launch:</p>
+      <p><strong>Windows:</strong> the installer isn't code-signed yet, so SmartScreen shows "Windows protected your PC". Click <strong>More info</strong>, then <strong>Run anyway</strong>.</p>
+      <p><strong>macOS:</strong> test builds aren't notarized by Apple, so macOS blocks the first launch:</p>
       <ol>
         <li>Open Playhead from Applications. When macOS says it can't verify it, click <strong>Done</strong>.</li>
         <li>Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down to "Playhead was blocked" and click <strong>Open Anyway</strong>.</li>
@@ -121,8 +126,8 @@
         <li><strong>Cache</strong>: Playhead keeps at most the cache limit on disk while playing (1 GB by default, Settings → Cache), keeps a stopped title for 5 minutes so you can resume instantly, then removes it. Settings → Cache → Clear cache removes it now.</li>
         <li><strong>Uploading</strong>: like every BitTorrent client, Playhead shares pieces with other peers while it plays, capped at 1 MB/s by default (Settings → Network). Other peers can see your IP address.</li>
         <li><strong>No login, no server, no data collection.</strong> Playhead needs no account, has no servers of its own and collects nothing: no analytics, tracking or telemetry. Everything runs on your Mac.</li>
-        <li><strong>What leaves your Mac</strong>: requests to The Movie Database for posters and details, searches to the Internet Archive and to sources you add, indexer definitions from GitHub when you add an indexer, BitTorrent traffic while you watch, a version check at launch and once a day (see below), and OpenSubtitles requests if you add a key. Nothing else.</li>
-        <li><strong>Update checks</strong>: at launch and once a day Playhead downloads one small static file from this site — <code>appcast.xml</code> on macOS, <code>latest.json</code> elsewhere — to see whether a newer version exists. The request carries nothing about you beyond what any web request does: your IP address, and the app's name and version in the User-Agent. No account, no identifiers, no analytics. Turn it off in <strong>Settings → About → Updates</strong>. On macOS, the update itself downloads from GitHub Releases and is verified with an EdDSA signature before it installs.</li>
+        <li><strong>What leaves your computer</strong>: requests to The Movie Database for posters and details, searches to the Internet Archive and to sources you add, indexer definitions from GitHub when you add an indexer, BitTorrent traffic while you watch, a version check at launch and once a day (see below), and OpenSubtitles requests if you add a key. Nothing else.</li>
+        <li><strong>Update checks</strong>: at launch and once a day Playhead downloads one small static file from this site — <code>appcast.xml</code> on macOS, <code>appcast-windows.xml</code> on Windows, <code>latest.json</code> elsewhere — to see whether a newer version exists. The request carries nothing about you beyond what any web request does: your IP address, and the app's name and version in the User-Agent. No account, no identifiers, no analytics. Turn it off in <strong>Settings → About → Updates</strong>. On macOS, the update itself downloads from GitHub Releases and is verified with an EdDSA signature before it installs.</li>
       </ul>
 
       <h2 id="troubleshooting">Troubleshooting</h2>
@@ -136,7 +141,7 @@
       <p>Quit Playhead and delete <code>~/Library/Containers/com.miloshampl.playhead</code> — this removes all profiles, progress and settings (export first if you want to keep them).</p>
 
       <h2 id="report">Reporting a problem</h2>
-      <p><a href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Open an issue</a> with the version (Settings → About), your macOS version and Mac model,
+      <p><a href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Open an issue</a> with the version (Settings → About), your macOS or Windows version and computer model,
         what you did, what you expected, and what happened. A screenshot or screen recording helps a lot.</p>
 
       <h2 id="licences">Open-source components</h2>
