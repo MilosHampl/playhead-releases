@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "name": "Playhead",
+  "version": "0.1.0",
+  "build": 4,
+  "tag": "v0.1.0-test.4",
+  "publishedAt": "2026-09-29T08:26:52Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.4",
+  "notes": "### Automatic updates\n\nPlayhead now keeps itself up to date.\n\n- **On macOS**, Playhead checks for a new version at launch and once a day. When one is out, it shows the release notes and an **Install Update** button. It then downloads the update, checks its signature, installs it and relaunches.\n- Settings → About → Updates has **Check now**, a switch for the automatic check, and an option to install updates automatically when Playhead quits.\n- The check downloads one small file from the Playhead download page. Nothing about you is sent.\n\n**Install this build by hand once** (test build 3 can't update itself). Every build after this one arrives automatically.\n",
+  "platforms": {
+    "macos": {
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.4/Playhead-macos.dmg",
+      "sha256": "b5b67be7abdbda463ebd15dba1803353e74a85e3cc7cb25e02e0523573602012",
+      "size": 83023932
+    }
+  }
+}

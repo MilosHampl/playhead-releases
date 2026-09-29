@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Playhead</title>
+    <link>https://miloshampl.github.io/playhead-releases/</link>
+    <description>Playhead update feed</description>
+    <language>en</language>
+    <item>
+      <title>Playhead 0.1.0 (build 4)</title>
+      <pubDate>Tue, 29 Sep 2026 08:26:52 +0000</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.4</link>
+      <description sparkle:format="markdown"><![CDATA[### Automatic updates
+
+Playhead now keeps itself up to date.
+
+- **On macOS**, Playhead checks for a new version at launch and once a day. When one is out, it shows the release notes and an **Install Update** button. It then downloads the update, checks its signature, installs it and relaunches.
+- Settings → About → Updates has **Check now**, a switch for the automatic check, and an option to install updates automatically when Playhead quits.
+- The check downloads one small file from the Playhead download page. Nothing about you is sent.
+
+**Install this build by hand once** (test build 3 can't update itself). Every build after this one arrives automatically.]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.4/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="Pt05El4NW7AmuUNkqdLov3SucAgbVFYCYS0GtEcszYAHj+RF4Avwg1D/ihvgwdGqHkvXjrgLlOQ3CQIYOEnSBA==" length="83023932" />
+    </item>
+  </channel>
+</rss>
+<!-- sparkle-signatures:
+edSignature: q3f8TX94zt3Uoy9ekxWI7Cd++HdNEWnb8xFBEwU0/DkCxpBDcHBQAZFxhdavbTa23Kei17pPh6dcaa8chFdHBQ==
+length: 1826
+-->
