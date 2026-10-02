@@ -6,28 +6,37 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 12)</title>
-      <pubDate>Fri, 02 Oct 2026 17:25:56 +0000</pubDate>
-      <sparkle:version>12</sparkle:version>
+      <title>Playhead 0.1.0 (build 13)</title>
+      <pubDate>Fri, 02 Oct 2026 18:20:33 +0000</pubDate>
+      <sparkle:version>13</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.12</link>
-      <description sparkle:format="markdown"><![CDATA[**Player**
-- No volume control in the player on any device. Use the device's own volume; M still mutes on a keyboard.
-- TV: Left/Right reach every button in the bottom row (the volume slider was catching them).
-- Seeking: the focus ring sits on the seek dot.
-- The Back button in the player leaves it right away.
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.13</link>
+      <description sparkle:format="markdown"><![CDATA[**Phones and tablets**
+- Back goes back through pages; only Discover closes the app.
+- The player is truly fullscreen: no clock or battery bar.
+- New Fit/Fill button to fill tall screens (W on a keyboard).
 
-**Resume**
-- Continue Watching, Up Next and history now open the exact episode and start playing from where you stopped.
-- The page underneath no longer steals the remote from the player.
+**Player**
+- A dark loading screen while the video starts, which fades into playback.
+- Leaving the player saves your progress immediately, so Continue Watching is up to date.
+- Downloads play in Playhead's own player.
+
+**Finding sources**
+- Much smarter title matching, Sonarr/Radarr-style. Oddly formatted release names (spaced-out letters, dots, years, "Part 1") are no longer filtered out, while genuinely different titles still are.
+
+**TV navigation**
+- Arrows stop at the edges of the sidebar and the Settings list instead of jumping somewhere random.
+- Long text-only sections can be scrolled through with Up/Down.
+- One smooth scroll per press, no double movement.
+- Activity now shows only History and Downloads.
 
 Windows stays on build 6 for this test release.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.12/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="ujCfyqhxZxuNYPe23GS8jYTei3IgOtws0syd60/4ruWRcXH4tS0oa3dxHGuXl2G0942ODokmMTJnw1QHsLFgBw==" length="83145730" />
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.13/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="GHtT1/r963HwL9jYnztpx16xYqrZDWtj3Fy+djQHzvVIpgrblc5bXHFhORW4LgR5+L7IfhxI/2XKaEjjIxiYAw==" length="83136379" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: N23pJwwk/33nbtgMc36EiS9MFLW6EVoWA8BaeX+eCKH0X3PKOrZiTz7Prm/xq8ZlPqwwFo2JxBJp0xFgKrBKAw==
-length: 1711
+edSignature: IninnlR2wWGi0LY4Z1UnMsIYbArd0+QBKtLue43VDqpIx/9U58OKP5eLJSOx863FlH3mIbLS0bHTPBvUV0TUBQ==
+length: 2138
 -->

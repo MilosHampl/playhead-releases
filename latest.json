@@ -2,21 +2,21 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 12,
-  "tag": "v0.1.0-test.12",
-  "publishedAt": "2026-10-02T17:25:56Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.12",
-  "notes": "**Player**\n- No volume control in the player on any device. Use the device's own volume; M still mutes on a keyboard.\n- TV: Left/Right reach every button in the bottom row (the volume slider was catching them).\n- Seeking: the focus ring sits on the seek dot.\n- The Back button in the player leaves it right away.\n\n**Resume**\n- Continue Watching, Up Next and history now open the exact episode and start playing from where you stopped.\n- The page underneath no longer steals the remote from the player.\n\nWindows stays on build 6 for this test release.\n",
+  "build": 13,
+  "tag": "v0.1.0-test.13",
+  "publishedAt": "2026-10-02T18:20:33Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.13",
+  "notes": "**Phones and tablets**\n- Back goes back through pages; only Discover closes the app.\n- The player is truly fullscreen: no clock or battery bar.\n- New Fit/Fill button to fill tall screens (W on a keyboard).\n\n**Player**\n- A dark loading screen while the video starts, which fades into playback.\n- Leaving the player saves your progress immediately, so Continue Watching is up to date.\n- Downloads play in Playhead's own player.\n\n**Finding sources**\n- Much smarter title matching, Sonarr/Radarr-style. Oddly formatted release names (spaced-out letters, dots, years, \"Part 1\") are no longer filtered out, while genuinely different titles still are.\n\n**TV navigation**\n- Arrows stop at the edges of the sidebar and the Settings list instead of jumping somewhere random.\n- Long text-only sections can be scrolled through with Up/Down.\n- One smooth scroll per press, no double movement.\n- Activity now shows only History and Downloads.\n\nWindows stays on build 6 for this test release.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.12/Playhead-macos.dmg",
-      "sha256": "64f6e3354801c5adf0f8b8862e187ba76b2fbfbf7db8fb0638a850106ce93f55",
-      "size": 83145730
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.13/Playhead-macos.dmg",
+      "sha256": "52f5785f87380b444db83d41dde14b344076dfb374890f3512110551e3226e10",
+      "size": 83136379
     },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.12/Playhead-android.apk",
-      "sha256": "1fcd9af1835c46a8dd0d5e02c404a2349b0df84913a020ebfa73cf82394ceab3",
-      "size": 119614471
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.13/Playhead-android.apk",
+      "sha256": "d2b46f304feee11bbd889aef2004d2b81d3fc83521922938a94c609069fab226",
+      "size": 119614675
     }
   }
 }
