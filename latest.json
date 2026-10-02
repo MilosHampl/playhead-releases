@@ -2,21 +2,21 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 5,
-  "tag": "v0.1.0-test.5",
-  "publishedAt": "2026-09-29T14:44:20Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.5",
-  "notes": "### What's new\n\n- **Playhead for Windows.** Playhead now runs on 64-bit Windows 10 and 11 as well as macOS; the Windows download is on the Playhead page.\n- **On the Mac**, this is the first update delivered automatically. Nothing else changed.\n\n### Installing on Windows\n\n- Run **Playhead-windows-setup.exe**. It installs for your user only, with no administrator prompt.\n- The installer isn't code-signed yet, so the first time SmartScreen says \"Windows protected your PC\": click **More info → Run anyway**.\n- After that it keeps itself up to date, like the Mac version.\n",
+  "build": 6,
+  "tag": "v0.1.0-test.6",
+  "publishedAt": "2026-10-02T11:14:45Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.6",
+  "notes": "### What's new\n\n- **Playhead for Android TV and Google TV.** Install it once (guide on the Playhead page, under Docs → Android TV); after that it updates itself.\n- **Remote and keyboard navigation.** The whole app works with a TV remote or the arrow keys, with a clear highlight on the selected item. OK/Enter selects; Back/Escape goes back.\n- **macOS:** the update window can no longer hide behind Playhead's window. Settings → About shows the exact version you're running.\n\n### Installing on Android TV / Google TV\n\n- No computer: install **Downloader** from the Play Store on the TV, open it and enter `miloshampl.github.io/playhead-releases/apk`.\n- From a computer: `adb connect` your TV over Wi-Fi and `adb install Playhead-android.apk`.\n- The first update asks once to allow Playhead to install apps; later updates install by themselves.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.5/Playhead-macos.dmg",
-      "sha256": "00f8a6a6907e54ca0e82a9dcbdedb5a58eb74e48cfbfd223cb00ad62447fb051",
-      "size": 82383216
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.6/Playhead-macos.dmg",
+      "sha256": "3f2586f82a53e7173919e96e25257c39a3fd97c17be63d277c050fc086c5027c",
+      "size": 82413694
     },
-    "windows": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.5/Playhead-windows-setup.exe",
-      "sha256": "305dc470524a0111c2508072d2c9c45b10a40bce3c4a98c0220a1e38c4c6058e",
-      "size": 36936246
+    "android": {
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.6/Playhead-android.apk",
+      "sha256": "5f471d58eaea53b6b67f9e2ef59713a86117f778e5a8b517983908a95911e0dc",
+      "size": 118135235
     }
   }
 }
