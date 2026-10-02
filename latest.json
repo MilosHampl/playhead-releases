@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "build": 16,
   "tag": "v0.1.0-test.16",
-  "publishedAt": "2026-10-02T22:49:40Z",
+  "publishedAt": "2026-10-02T23:00:22Z",
   "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.16",
   "notes": "**Smoother playback on Android TV**\n- Video goes straight to the screen through its own hardware layer, as in Plex. Before, Flutter redrew every frame, which was the lag on large files.\n- If that fails, Playhead falls back to the old output by itself. You can also pick it in Settings → Playback → Video output.\n- The player keeps 30–120 s buffered. After a stall it waits for 8 s of buffer, so it doesn't stall again straight away.\n- A short drop in peers no longer brings up the stall screen while plenty is buffered.\n- Stats overlay: dropped frames, download speed vs. the file's bitrate, buffer seconds, and the number of stalls.\n\n**Season packs**\n- Episode searches also look for season packs (\"Show S02\", \"Season 2\") and complete-series packs.\n- Inside a pack, the episode is found even when the season is only in the folder name. Only that file downloads, starting with its beginning and end.\n- Choose source labels them \"Season pack\", \"Seasons 1–3 pack\" or \"Complete series pack\".\n- If a pack doesn't have the episode, the player moves to the next source and says why.\n\n**Series**\n- TV Shows from the sidebar opens at the top, with Play focused, like Movies.\n- Seasons switch when you press OK, not just on focus. Only the episode list reloads; the page, its scroll position and focus stay where they were.\n- The Play button at the top always shows your next episode, wherever you browse.\n\n**Skip intro and credits**\n- A \"Skip intro\" / \"Skip credits\" button appears when the video's chapters mark them. On TV it takes focus, so one press of OK skips.\n- Settings → Playback has \"Skip intros automatically\" and \"Skip credits automatically\".\n\n**Faster start**\n- Continue Watching and Up Next search for the best source in the background while you browse, so pressing Play starts sooner.\n- Back on the Android loading screen now leaves for good. The loading screen no longer comes back.\n- When playback switches to a backup source, the torrent that's already playing is never stopped.\n",
   "platforms": {
@@ -17,6 +17,11 @@
       "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.16/Playhead-android.apk",
       "sha256": "219a26e13c895fa4cf28fbc8bdb46dff80d93bf84fd1b75ea1ebe03c6b15e0eb",
       "size": 119844071
+    },
+    "windows": {
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.16/Playhead-windows-setup.exe",
+      "sha256": "6c345d6d9594856bad177b978c930636dd423716fc60c5a46c3c7f25ac16e63b",
+      "size": 37094450
     }
   }
 }
