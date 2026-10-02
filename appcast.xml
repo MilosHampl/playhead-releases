@@ -6,28 +6,28 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 6)</title>
-      <pubDate>Fri, 02 Oct 2026 11:19:48 +0000</pubDate>
-      <sparkle:version>6</sparkle:version>
+      <title>Playhead 0.1.0 (build 7)</title>
+      <pubDate>Fri, 02 Oct 2026 12:42:59 +0000</pubDate>
+      <sparkle:version>7</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.6</link>
-      <description sparkle:format="markdown"><![CDATA[### What's new
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.7</link>
+      <description sparkle:format="markdown"><![CDATA[**Android TV**
+- This is the first build delivered through the in-app updater: Playhead on Android shows "Install update". The first time, Android asks you to allow Playhead to install apps.
+- Remote navigation: Left always reaches the sidebar, and Back goes to the sidebar before leaving the app. The rail expands with labels while you're in it.
+- On TV, the update card's "Install update" button takes focus when the card appears.
+- The indexer catalogue and sources load on Android. HTTPS was failing with "expect rustls-platform-verifier to be initialized".
+- Onboarding keeps the focused button on screen when the step changes.
 
-- **Playhead for Android TV and Google TV.** Install it once (guide on the Playhead page, under Docs → Android TV); after that it updates itself.
-- **Remote and keyboard navigation.** The whole app works with a TV remote or the arrow keys, with a clear highlight on the selected item. OK/Enter selects; Back/Escape goes back.
-- **macOS:** the update window can no longer hide behind Playhead's window. Settings → About shows the exact version you're running.
+**macOS**
+- Same fixes. Updates arrive through the usual update window.
 
-### Installing on Android TV / Google TV
-
-- No computer: install **Downloader** from the Play Store on the TV, open it and enter `miloshampl.github.io/playhead-releases/apk`.
-- From a computer: `adb connect` your TV over Wi-Fi and `adb install Playhead-android.apk`.
-- The first update asks once to allow Playhead to install apps; later updates install by themselves.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.6/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="HnB6MiBTggxnm3c0aOw23ajLowCrwAehgu0YUQj3+ePKItxsIxmz/V++PEbXTOZ7HabRbzlw1OSBeavNxAIWAw==" length="82413694" />
+Windows stays on build 6 for this release.]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.7/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="/ks+cQV8PA+KciidgOSFRX31nU9dgI8gSf+t03H62YhbuC0V6cwBO63rBHsvveRJ7rhdnDfCEwj7iDMbkYEzAQ==" length="82383003" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: 2Z6tICoJkDVATJIZi9+X5fHF4oSQjwyfIDvOcFgvNoV6HHpiHsaBjivrvD5CdDabPY1j7lelErnR9TYr1/5TDA==
-length: 2004
+edSignature: gjYj+t74heG1xyP2AoHs0zKaINgXwiQ8bQxQE0kvH9xqc4Abvl1vu0FC4OFiHvt7HkhJBmrQOBVUGli9cO2DBg==
+length: 1906
 -->

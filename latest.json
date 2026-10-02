@@ -2,26 +2,21 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 6,
-  "tag": "v0.1.0-test.6",
-  "publishedAt": "2026-10-02T11:19:49Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.6",
-  "notes": "### What's new\n\n- **Playhead for Android TV and Google TV.** Install it once (guide on the Playhead page, under Docs → Android TV); after that it updates itself.\n- **Remote and keyboard navigation.** The whole app works with a TV remote or the arrow keys, with a clear highlight on the selected item. OK/Enter selects; Back/Escape goes back.\n- **macOS:** the update window can no longer hide behind Playhead's window. Settings → About shows the exact version you're running.\n\n### Installing on Android TV / Google TV\n\n- No computer: install **Downloader** from the Play Store on the TV, open it and enter `miloshampl.github.io/playhead-releases/apk`.\n- From a computer: `adb connect` your TV over Wi-Fi and `adb install Playhead-android.apk`.\n- The first update asks once to allow Playhead to install apps; later updates install by themselves.\n",
+  "build": 7,
+  "tag": "v0.1.0-test.7",
+  "publishedAt": "2026-10-02T12:42:59Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.7",
+  "notes": "**Android TV**\n- This is the first build delivered through the in-app updater: Playhead on Android shows \"Install update\". The first time, Android asks you to allow Playhead to install apps.\n- Remote navigation: Left always reaches the sidebar, and Back goes to the sidebar before leaving the app. The rail expands with labels while you're in it.\n- On TV, the update card's \"Install update\" button takes focus when the card appears.\n- The indexer catalogue and sources load on Android. HTTPS was failing with \"expect rustls-platform-verifier to be initialized\".\n- Onboarding keeps the focused button on screen when the step changes.\n\n**macOS**\n- Same fixes. Updates arrive through the usual update window.\n\nWindows stays on build 6 for this release.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.6/Playhead-macos.dmg",
-      "sha256": "3f2586f82a53e7173919e96e25257c39a3fd97c17be63d277c050fc086c5027c",
-      "size": 82413694
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.7/Playhead-macos.dmg",
+      "sha256": "08f897f222ff22ef2958da0f3b9b9c190701b450b78ec7e7bef6f649d7397c02",
+      "size": 82383003
     },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.6/Playhead-android.apk",
-      "sha256": "5f471d58eaea53b6b67f9e2ef59713a86117f778e5a8b517983908a95911e0dc",
-      "size": 118135235
-    },
-    "windows": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.6/Playhead-windows-setup.exe",
-      "sha256": "b1c7a6b6f5574f43872936fdf5983d2fc9356247cf1d44a5e29d89df85f0d0e8",
-      "size": 36973853
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.7/Playhead-android.apk",
+      "sha256": "2e575a51fc4c46b02e0fb5e8e55a99228409606fedf0ace7f9b501cb8c7e6c24",
+      "size": 118495683
     }
   }
 }
