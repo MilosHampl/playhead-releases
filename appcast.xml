@@ -6,38 +6,43 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 15)</title>
-      <pubDate>Fri, 02 Oct 2026 19:40:23 +0000</pubDate>
-      <sparkle:version>15</sparkle:version>
+      <title>Playhead 0.1.0 (build 16)</title>
+      <pubDate>Fri, 02 Oct 2026 22:49:40 +0000</pubDate>
+      <sparkle:version>16</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.15</link>
-      <description sparkle:format="markdown"><![CDATA[**Finding and starting sources**
-- The automatic pick puts healthy torrents first: more seeders and peers win, and near-dead releases are used only when nothing better is left.
-- While a source starts, the next two are tried alongside it. If the first delivers nothing within 8 s, playback switches to whichever already has data. The others are dropped at once.
-- Faster failover: a source that failed is never retried.
-- Choose source can sort by Recommended, Seeders, Size or Quality, and remembers your choice.
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.16</link>
+      <description sparkle:format="markdown"><![CDATA[**Smoother playback on Android TV**
+- Video goes straight to the screen through its own hardware layer, as in Plex. Before, Flutter redrew every frame, which was the lag on large files.
+- If that fails, Playhead falls back to the old output by itself. You can also pick it in Settings → Playback → Video output.
+- The player keeps 30–120 s buffered. After a stall it waits for 8 s of buffer, so it doesn't stall again straight away.
+- A short drop in peers no longer brings up the stall screen while plenty is buffered.
+- Stats overlay: dropped frames, download speed vs. the file's bitrate, buffer seconds, and the number of stalls.
 
-**Player**
-- Subtitles show on Android with both players.
-- Less background work while the controls are hidden (about 1 update a second instead of 4).
-- On narrow portrait screens the controls use two rows, so nothing gets squeezed.
+**Season packs**
+- Episode searches also look for season packs ("Show S02", "Season 2") and complete-series packs.
+- Inside a pack, the episode is found even when the season is only in the folder name. Only that file downloads, starting with its beginning and end.
+- Choose source labels them "Season pack", "Seasons 1–3 pack" or "Complete series pack".
+- If a pack doesn't have the episode, the player moves to the next source and says why.
 
-**Kids profiles**
-- TV rows also check each show's age rating in the background; anything unconfirmed disappears.
+**Series**
+- TV Shows from the sidebar opens at the top, with Play focused, like Movies.
+- Seasons switch when you press OK, not just on focus. Only the episode list reloads; the page, its scroll position and focus stay where they were.
+- The Play button at the top always shows your next episode, wherever you browse.
 
-**Polish**
-- Sheet titles line up with their content.
-- The person page is centred on phones.
-- The player settings sheet uses the shared corner sizes.
+**Skip intro and credits**
+- A "Skip intro" / "Skip credits" button appears when the video's chapters mark them. On TV it takes focus, so one press of OK skips.
+- Settings → Playback has "Skip intros automatically" and "Skip credits automatically".
 
-**Windows**
-- Back in sync with macOS and Android.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="z/LE46i43quE6DQPVfOS8xRFR/YaZHZypjijA9Y/N3Gepo6+Sd9mNtGxiPNHR0n7esSJJguGEy/2L40VS5P2Bw==" length="82830319" />
+**Faster start**
+- Continue Watching and Up Next search for the best source in the background while you browse, so pressing Play starts sooner.
+- Back on the Android loading screen now leaves for good. The loading screen no longer comes back.
+- When playback switches to a backup source, the torrent that's already playing is never stopped.]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.16/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="ZZxYxQCUGbogZ+A/VS/1ny5LtOD49VONgqJX/Pwb2eA8Rgva7y7/SlCKUqdAlUwGtW6eksvXR8mT4CgcK61SBA==" length="82870214" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: klEEC1ygBOIRgTqQQqApX2Pn9ZkcEh5/6t8lv0yQkKbVXVZUGsZoEAFeydEXkttnc+ysCPn6mE1DLVxe+3q1Cw==
-length: 2228
+edSignature: 5Ydgv5RWnr0lq5YcxApS+RdSjQ7cNB39HgFcFalUayKSAhMvuThTJHzUbVPKRHcivP8gO40wFKfIUdrNzdorAg==
+length: 3159
 -->
