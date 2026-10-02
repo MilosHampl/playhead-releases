@@ -2,21 +2,21 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 7,
-  "tag": "v0.1.0-test.7",
-  "publishedAt": "2026-10-02T12:42:59Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.7",
-  "notes": "**Android TV**\n- This is the first build delivered through the in-app updater: Playhead on Android shows \"Install update\". The first time, Android asks you to allow Playhead to install apps.\n- Remote navigation: Left always reaches the sidebar, and Back goes to the sidebar before leaving the app. The rail expands with labels while you're in it.\n- On TV, the update card's \"Install update\" button takes focus when the card appears.\n- The indexer catalogue and sources load on Android. HTTPS was failing with \"expect rustls-platform-verifier to be initialized\".\n- Onboarding keeps the focused button on screen when the step changes.\n\n**macOS**\n- Same fixes. Updates arrive through the usual update window.\n\nWindows stays on build 6 for this release.\n",
+  "build": 8,
+  "tag": "v0.1.0-test.8",
+  "publishedAt": "2026-10-02T14:35:21Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.8",
+  "notes": "**Android TV: remote navigation**\n- Text fields never trap focus. Arrows and Back always leave them, including after the keyboard closes (add indexer, search, every form). Fields don't open the keyboard by themselves.\n- Sidebar:\n  - Settings and the profile avatar are reachable; the sidebar scrolls instead of overflowing.\n  - No collapse/reopen flicker when changing pages.\n  - The focus ring isn't cut off, and the avatar is aligned.\n  - Keyboard shortcut hints are hidden on TV.\n- Back on the sidebar asks \"Exit Playhead?\" instead of closing the app.\n- The Settings section list scrolls to the focused item.\n- Adding indexers works with the remote alone:\n  - Browse and search the catalogue, then pick an indexer.\n  - Settings use proper toggles and option lists.\n  - Save, Test, Update definitions, and edit or remove an indexer.\n  - Add source.\n- Player:\n  - Error and notice panels and every sheet focus their main button.\n  - The double yellow underlines on player messages are fixed.\n- Detail page: the header fits the TV screen, so the title no longer covers the poster.\n- Focus rings are no longer clipped in rows and cards.\n- The update card takes focus when it appears. Back on it means \"later\".\n\n**Desktop and phones**\n- The TV changes stay on TV. The desktop sidebar doesn't pop open for mouse users, and arrow keys edit text normally. Space still pauses while buffering. Back on phones isn't swallowed.\n\nWindows stays on build 6 for this release.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.7/Playhead-macos.dmg",
-      "sha256": "08f897f222ff22ef2958da0f3b9b9c190701b450b78ec7e7bef6f649d7397c02",
-      "size": 82383003
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.8/Playhead-macos.dmg",
+      "sha256": "fbd2d22a6fdfc20aafb678813288f005d89e5fadaa10d2254043f0e91dc3a355",
+      "size": 82359736
     },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.7/Playhead-android.apk",
-      "sha256": "2e575a51fc4c46b02e0fb5e8e55a99228409606fedf0ace7f9b501cb8c7e6c24",
-      "size": 118495683
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.8/Playhead-android.apk",
+      "sha256": "7deb154103a30653f1f4757a1471e2b2724d2ab11d1bc093276696f9fc9cdf87",
+      "size": 118593987
     }
   }
 }

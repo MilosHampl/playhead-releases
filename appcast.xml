@@ -6,28 +6,42 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 7)</title>
-      <pubDate>Fri, 02 Oct 2026 12:42:59 +0000</pubDate>
-      <sparkle:version>7</sparkle:version>
+      <title>Playhead 0.1.0 (build 8)</title>
+      <pubDate>Fri, 02 Oct 2026 14:35:21 +0000</pubDate>
+      <sparkle:version>8</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.7</link>
-      <description sparkle:format="markdown"><![CDATA[**Android TV**
-- This is the first build delivered through the in-app updater: Playhead on Android shows "Install update". The first time, Android asks you to allow Playhead to install apps.
-- Remote navigation: Left always reaches the sidebar, and Back goes to the sidebar before leaving the app. The rail expands with labels while you're in it.
-- On TV, the update card's "Install update" button takes focus when the card appears.
-- The indexer catalogue and sources load on Android. HTTPS was failing with "expect rustls-platform-verifier to be initialized".
-- Onboarding keeps the focused button on screen when the step changes.
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.8</link>
+      <description sparkle:format="markdown"><![CDATA[**Android TV: remote navigation**
+- Text fields never trap focus. Arrows and Back always leave them, including after the keyboard closes (add indexer, search, every form). Fields don't open the keyboard by themselves.
+- Sidebar:
+  - Settings and the profile avatar are reachable; the sidebar scrolls instead of overflowing.
+  - No collapse/reopen flicker when changing pages.
+  - The focus ring isn't cut off, and the avatar is aligned.
+  - Keyboard shortcut hints are hidden on TV.
+- Back on the sidebar asks "Exit Playhead?" instead of closing the app.
+- The Settings section list scrolls to the focused item.
+- Adding indexers works with the remote alone:
+  - Browse and search the catalogue, then pick an indexer.
+  - Settings use proper toggles and option lists.
+  - Save, Test, Update definitions, and edit or remove an indexer.
+  - Add source.
+- Player:
+  - Error and notice panels and every sheet focus their main button.
+  - The double yellow underlines on player messages are fixed.
+- Detail page: the header fits the TV screen, so the title no longer covers the poster.
+- Focus rings are no longer clipped in rows and cards.
+- The update card takes focus when it appears. Back on it means "later".
 
-**macOS**
-- Same fixes. Updates arrive through the usual update window.
+**Desktop and phones**
+- The TV changes stay on TV. The desktop sidebar doesn't pop open for mouse users, and arrow keys edit text normally. Space still pauses while buffering. Back on phones isn't swallowed.
 
 Windows stays on build 6 for this release.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.7/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="/ks+cQV8PA+KciidgOSFRX31nU9dgI8gSf+t03H62YhbuC0V6cwBO63rBHsvveRJ7rhdnDfCEwj7iDMbkYEzAQ==" length="82383003" />
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.8/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="wlrrWNEvlEo0IWW+aPLi0GZg5jlSO3nio+r5Qg+7Yh4HmJc8C/RsOml5vrgBCBml1nPnqC65rEj7UoMITu2fDw==" length="82359736" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: gjYj+t74heG1xyP2AoHs0zKaINgXwiQ8bQxQE0kvH9xqc4Abvl1vu0FC4OFiHvt7HkhJBmrQOBVUGli9cO2DBg==
-length: 1906
+edSignature: L1mZS8TFwUwefzxetQU47BaJS+SZGvwvpXUymfOzXfl/KdEFPQN81IBy2qCOMTg83n1i04SDyTEHwWBwgUnqBg==
+length: 2619
 -->
