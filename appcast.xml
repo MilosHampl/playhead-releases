@@ -6,37 +6,24 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 13)</title>
-      <pubDate>Fri, 02 Oct 2026 18:20:33 +0000</pubDate>
-      <sparkle:version>13</sparkle:version>
+      <title>Playhead 0.1.0 (build 14)</title>
+      <pubDate>Fri, 02 Oct 2026 18:30:40 +0000</pubDate>
+      <sparkle:version>14</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.13</link>
-      <description sparkle:format="markdown"><![CDATA[**Phones and tablets**
-- Back goes back through pages; only Discover closes the app.
-- The player is truly fullscreen: no clock or battery bar.
-- New Fit/Fill button to fill tall screens (W on a keyboard).
-
-**Player**
-- A dark loading screen while the video starts, which fades into playback.
-- Leaving the player saves your progress immediately, so Continue Watching is up to date.
-- Downloads play in Playhead's own player.
-
-**Finding sources**
-- Much smarter title matching, Sonarr/Radarr-style. Oddly formatted release names (spaced-out letters, dots, years, "Part 1") are no longer filtered out, while genuinely different titles still are.
-
-**TV navigation**
-- Arrows stop at the edges of the sidebar and the Settings list instead of jumping somewhere random.
-- Long text-only sections can be scrolled through with Up/Down.
-- One smooth scroll per press, no double movement.
-- Activity now shows only History and Downloads.
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.14</link>
+      <description sparkle:format="markdown"><![CDATA[**Design polish**
+- Dialogs, sheets, menus and the update card sit on a near-solid surface, so text stays readable over any content (including over video in the player).
+- One consistent set of corner radii and one height per control type across the app.
+- Detail and person pages start at the top instead of floating mid-screen.
+- A cleaner search field, evenly inset dividers in Settings, a tidier onboarding card, and see-through cards in the source list.
 
 Windows stays on build 6 for this test release.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.13/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="GHtT1/r963HwL9jYnztpx16xYqrZDWtj3Fy+djQHzvVIpgrblc5bXHFhORW4LgR5+L7IfhxI/2XKaEjjIxiYAw==" length="83136379" />
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.14/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="hPKxbCqFDBjU9wk3afMRT62KW0Q8i8xrQpgcZ7TvWiFhc0aUjpX35r9XgQeZ+Y5HevQ1y4ZZoncVFP8pvbo9Aw==" length="83147241" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: IninnlR2wWGi0LY4Z1UnMsIYbArd0+QBKtLue43VDqpIx/9U58OKP5eLJSOx863FlH3mIbLS0bHTPBvUV0TUBQ==
-length: 2138
+edSignature: FTiCsuJjC18gfU7Z/kgJ5F/ttsYVaHW9GJPZ5U8xnvyYO6k4j2j8zCjvvfAseJrUuVqhV/1L0DyKPIj3PHWzCg==
+length: 1668
 -->

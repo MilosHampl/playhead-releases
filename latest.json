@@ -2,20 +2,20 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 13,
-  "tag": "v0.1.0-test.13",
-  "publishedAt": "2026-10-02T18:20:33Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.13",
-  "notes": "**Phones and tablets**\n- Back goes back through pages; only Discover closes the app.\n- The player is truly fullscreen: no clock or battery bar.\n- New Fit/Fill button to fill tall screens (W on a keyboard).\n\n**Player**\n- A dark loading screen while the video starts, which fades into playback.\n- Leaving the player saves your progress immediately, so Continue Watching is up to date.\n- Downloads play in Playhead's own player.\n\n**Finding sources**\n- Much smarter title matching, Sonarr/Radarr-style. Oddly formatted release names (spaced-out letters, dots, years, \"Part 1\") are no longer filtered out, while genuinely different titles still are.\n\n**TV navigation**\n- Arrows stop at the edges of the sidebar and the Settings list instead of jumping somewhere random.\n- Long text-only sections can be scrolled through with Up/Down.\n- One smooth scroll per press, no double movement.\n- Activity now shows only History and Downloads.\n\nWindows stays on build 6 for this test release.\n",
+  "build": 14,
+  "tag": "v0.1.0-test.14",
+  "publishedAt": "2026-10-02T18:30:40Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.14",
+  "notes": "**Design polish**\n- Dialogs, sheets, menus and the update card sit on a near-solid surface, so text stays readable over any content (including over video in the player).\n- One consistent set of corner radii and one height per control type across the app.\n- Detail and person pages start at the top instead of floating mid-screen.\n- A cleaner search field, evenly inset dividers in Settings, a tidier onboarding card, and see-through cards in the source list.\n\nWindows stays on build 6 for this test release.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.13/Playhead-macos.dmg",
-      "sha256": "52f5785f87380b444db83d41dde14b344076dfb374890f3512110551e3226e10",
-      "size": 83136379
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.14/Playhead-macos.dmg",
+      "sha256": "1787d3c1c7a1f48199af4be4dc7437cb43c6c964d9e395a66cb492cb6a7aba0f",
+      "size": 83147241
     },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.13/Playhead-android.apk",
-      "sha256": "d2b46f304feee11bbd889aef2004d2b81d3fc83521922938a94c609069fab226",
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.14/Playhead-android.apk",
+      "sha256": "99a86e2dadc8e640baf385ad48a36c588e172fcd8cb6e7b308fb4bbfa0f3e3b6",
       "size": 119614675
     }
   }
