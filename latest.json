@@ -2,21 +2,21 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 10,
-  "tag": "v0.1.0-test.10",
-  "publishedAt": "2026-10-02T16:49:13Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.10",
-  "notes": "**Player on TV: every control is reachable with the remote**\n- With the controls hidden, any arrow shows them and lands on Play. Arrows no longer seek.\n- Left/Right move along a row: the top bar (Back, Quality, Stats, Settings), the seek bar, or the bottom bar.\n- Up/Down move between rows. Down from the seek bar goes to Play.\n- Seeking: focus the seek bar's dot and press Left/Right. The jump applies after a short pause, or straight away on OK.\n- The Quality preset you pick in Settings → Quality now drives Auto's choice.\n\nWindows stays on build 6 for this test release.\n",
+  "build": 11,
+  "tag": "v0.1.0-test.11",
+  "publishedAt": "2026-10-02T17:10:40Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.11",
+  "notes": "**Kids profiles fixed (lag, crashes, filtering)**\n- Kids rows now come from TMDB's own age-filtered lists (one request per row) instead of hundreds of full title downloads.\n- Any title whose age rating can't be confirmed is hidden.\n- Checks are small, cached and limited to 4 at a time.\n- A cold start into a kids profile no longer shows unfiltered rows first.\n\nWindows stays on build 6 for this test release.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.10/Playhead-macos.dmg",
-      "sha256": "851944f2a5b8c13fba7ed0241fbe955b8bd546223761b1a094728f553abe571f",
-      "size": 83129355
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.11/Playhead-macos.dmg",
+      "sha256": "5b89f91a74227dd201fb260287bee2e11b48e4834a5fb563a77177400bdf1c78",
+      "size": 83147825
     },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.10/Playhead-android.apk",
-      "sha256": "f096e1bec7e5768392b874b8ed5113594f16516846c07d879628ef7402bf50f7",
-      "size": 119548979
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.11/Playhead-android.apk",
+      "sha256": "bf002b42bf699425f133018ac40054bd67149a3c6c012ce6ef26e3219db9eae4",
+      "size": 119614515
     }
   }
 }

@@ -6,25 +6,24 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 10)</title>
-      <pubDate>Fri, 02 Oct 2026 16:49:12 +0000</pubDate>
-      <sparkle:version>10</sparkle:version>
+      <title>Playhead 0.1.0 (build 11)</title>
+      <pubDate>Fri, 02 Oct 2026 17:10:40 +0000</pubDate>
+      <sparkle:version>11</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.10</link>
-      <description sparkle:format="markdown"><![CDATA[**Player on TV: every control is reachable with the remote**
-- With the controls hidden, any arrow shows them and lands on Play. Arrows no longer seek.
-- Left/Right move along a row: the top bar (Back, Quality, Stats, Settings), the seek bar, or the bottom bar.
-- Up/Down move between rows. Down from the seek bar goes to Play.
-- Seeking: focus the seek bar's dot and press Left/Right. The jump applies after a short pause, or straight away on OK.
-- The Quality preset you pick in Settings → Quality now drives Auto's choice.
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.11</link>
+      <description sparkle:format="markdown"><![CDATA[**Kids profiles fixed (lag, crashes, filtering)**
+- Kids rows now come from TMDB's own age-filtered lists (one request per row) instead of hundreds of full title downloads.
+- Any title whose age rating can't be confirmed is hidden.
+- Checks are small, cached and limited to 4 at a time.
+- A cold start into a kids profile no longer shows unfiltered rows first.
 
 Windows stays on build 6 for this test release.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.10/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="w15bdW6a9OQeOOzmfS8ng1Cd9fUL7j4VagWnya6e17v6xRq3EKuVGaV/uHoESh/ge1PWGhVsUD2xh5lUBNLYDw==" length="83129355" />
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.11/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="xuTFQQV912A5EDv4iN4J77BTwhqJoeZAbI+hPHfm4U6aKj2cqMC/1WYH0ND/vD4aKMx9vdbo0ZPHywvUwoGXDQ==" length="83147825" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: EYQN8XjySXy1UFH6fMLbD0TyuX7TkvZiTyB1qTxVyIfrNeUwtLgqUqdbXcajSW+8iyi27af+EIk7zPWNf7ppAQ==
-length: 1737
+edSignature: V2ycSmeg4+wk5vsMj0SWQzhCJ0uPdkT7hNDNs0sk+nGiKMN9JB4RpHxVq40eAa1x++23y1WdwMvFgiMy8GgADQ==
+length: 1570
 -->
