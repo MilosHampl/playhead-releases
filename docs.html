@@ -24,6 +24,7 @@
     <nav class="toc">
       <a href="#install">Install</a>
       <a href="#first-launch">First launch</a>
+      <a href="#android-tv">Android TV and Google TV</a>
       <a href="#tmdb">TMDB catalogue</a>
       <a href="#sources">Sources</a>
       <a href="#playing">Playing</a>
@@ -55,6 +56,38 @@
       </ol>
       <p>Right-click → Open no longer skips this check on macOS 15 and later. Alternative for Terminal users:
         <code>xattr -dr com.apple.quarantine /Applications/Playhead.app</code></p>
+
+      <h2 id="android-tv">Android TV and Google TV</h2>
+      <p>Playhead runs on Google TV and Android TV: Chromecast with Google TV, the Google TV Streamer, NVIDIA Shield, and Sony, TCL or Hisense
+        TVs. It isn't in the Play Store, so you install it once yourself; after that it updates itself. Use the remote as usual: arrows to move,
+        OK to select, Back to go back.</p>
+      <h3>Without a computer: the Downloader app</h3>
+      <ol>
+        <li>Turn on developer mode: <strong>Settings → System → About</strong>, then select <strong>Android TV OS build</strong> seven times,
+          until the TV says you are now a developer.</li>
+        <li>Install <strong>Downloader</strong> (by AFTVnews) from the Play Store on the TV.</li>
+        <li>Open Downloader and enter <code>miloshampl.github.io/playhead-releases/apk</code>.</li>
+        <li>When Android says it can't install apps from Downloader, choose <strong>Settings</strong>, switch Downloader to
+          <strong>Allowed</strong>, press Back once and choose <strong>Install</strong>.</li>
+        <li>Open Playhead from your apps. You can delete the downloaded file in Downloader afterwards.</li>
+      </ol>
+      <h3>From a computer: wireless ADB</h3>
+      <ol>
+        <li>Turn on developer mode as above, then open <strong>Settings → System → Developer options → Wireless debugging</strong>, switch it on
+          and choose <strong>Pair device with pairing code</strong>.</li>
+        <li>On a computer on the same Wi-Fi with Android's <a href="https://developer.android.com/tools/releases/platform-tools">platform-tools</a>
+          installed, run <code>adb pair IP:PORT</code> with the address shown on the pairing screen and type the six-digit code.</li>
+        <li>Then <code>adb connect IP:PORT</code> with the address shown on the Wireless debugging screen, and
+          <code>adb install Playhead-android.apk</code> with the APK from the
+          <a href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-android.apk">latest release</a>.</li>
+      </ol>
+      <p>Older Android TV devices without Wireless debugging: switch on <strong>Network debugging</strong> (or ADB debugging) in Developer
+        options, run <code>adb connect TV-IP:5555</code> and accept the prompt on the TV. The TV's IP address is under
+        <strong>Settings → Network &amp; Internet</strong>.</p>
+      <h3>Updates on the TV</h3>
+      <p>When a new build is out, Playhead shows <strong>Install update</strong>. The first time, Android asks to allow Playhead to install
+        apps: choose <strong>Settings</strong>, switch Playhead to <strong>Allowed</strong> and press Back once. From then on updates install
+        by themselves in a few seconds (Android 12 and later). Playhead closes to update; open it again from your apps.</p>
 
       <h2 id="tmdb">TMDB catalogue</h2>
       <p>Posters, cast, descriptions and the full movie and series catalogue come from The Movie Database. It works out of the box: Playhead comes with a key built in.</p>

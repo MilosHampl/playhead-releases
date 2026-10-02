@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playhead</title>
-  <meta name="description" content="Playhead streams video while it downloads, in a native player on macOS and Windows. No login, no server, no data collection: everything runs on your Mac.">
+  <meta name="description" content="Playhead streams video while it downloads, in a native player on macOS, Windows and Android TV. No login, no server, no data collection: everything runs on your Mac.">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -31,9 +31,10 @@
           Download for macOS</a>
         <a class="btn" id="dl-win" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-windows-setup.exe">
           Download for Windows</a>
+        <a class="btn" id="dl-tv" href="docs.html#android-tv">Android TV</a>
         <a class="btn" href="https://github.com/MilosHampl/playhead-releases/releases">All releases</a>
       </div>
-      <p class="meta" id="meta">Test build · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · updates itself</p>
+      <p class="meta" id="meta">Test build · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · Android TV and Google TV · updates itself</p>
     </div>
 
     <section class="private" id="private">
@@ -142,10 +143,11 @@
         const exe = assets.find(a => a.name.endsWith('.exe'));
         const date = new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
         document.getElementById('meta').textContent =
-          `${rel.name || rel.tag_name} · ${date} · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · updates itself`;
+          `${rel.name || rel.tag_name} · ${date} · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · Android TV and Google TV · updates itself`;
         if (dmg) document.getElementById('dl-mac').href = dmg.browser_download_url;
         if (exe) document.getElementById('dl-win').href = exe.browser_download_url;
         else document.getElementById('dl-win').remove();
+        if (!assets.some(a => a.name.endsWith('.apk'))) document.getElementById('dl-tv').remove();
       })
       .catch(() => {});
   </script>
