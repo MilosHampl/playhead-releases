@@ -7,7 +7,7 @@
     <language>en</language>
     <item>
       <title>Playhead 0.1.0 (build 6)</title>
-      <pubDate>Fri, 02 Oct 2026 11:14:45 +0000</pubDate>
+      <pubDate>Fri, 02 Oct 2026 11:19:48 +0000</pubDate>
       <sparkle:version>6</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
@@ -28,6 +28,6 @@
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: aHGKgVulf/GCxeEA18EGS7RE/wy54ghzHGHsaNKdewgdhQffnja18lmVYUVKzcQ0+NKHH4kGlI19OJnAx9LzBg==
+edSignature: 2Z6tICoJkDVATJIZi9+X5fHF4oSQjwyfIDvOcFgvNoV6HHpiHsaBjivrvD5CdDabPY1j7lelErnR9TYr1/5TDA==
 length: 2004
 -->
