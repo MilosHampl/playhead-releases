@@ -2,26 +2,16 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 15,
-  "tag": "v0.1.0-test.15",
-  "publishedAt": "2026-10-02T19:40:24Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.15",
-  "notes": "**Finding and starting sources**\n- The automatic pick puts healthy torrents first: more seeders and peers win, and near-dead releases are used only when nothing better is left.\n- While a source starts, the next two are tried alongside it. If the first delivers nothing within 8 s, playback switches to whichever already has data. The others are dropped at once.\n- Faster failover: a source that failed is never retried.\n- Choose source can sort by Recommended, Seeders, Size or Quality, and remembers your choice.\n\n**Player**\n- Subtitles show on Android with both players.\n- Less background work while the controls are hidden (about 1 update a second instead of 4).\n- On narrow portrait screens the controls use two rows, so nothing gets squeezed.\n\n**Kids profiles**\n- TV rows also check each show's age rating in the background; anything unconfirmed disappears.\n\n**Polish**\n- Sheet titles line up with their content.\n- The person page is centred on phones.\n- The player settings sheet uses the shared corner sizes.\n\n**Windows**\n- Back in sync with macOS and Android.\n",
+  "build": 16,
+  "tag": "v0.1.0-test.16",
+  "publishedAt": "2026-10-02T22:44:18Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.16",
+  "notes": "**Smoother playback on Android TV**\n- Video goes straight to the screen through its own hardware layer, as in Plex. Before, Flutter redrew every frame, which was the lag on large files.\n- If that fails, Playhead falls back to the old output by itself. You can also pick it in Settings → Playback → Video output.\n- The player keeps 30–120 s buffered. After a stall it waits for 8 s of buffer, so it doesn't stall again straight away.\n- A short drop in peers no longer brings up the stall screen while plenty is buffered.\n- Stats overlay: dropped frames, download speed vs. the file's bitrate, buffer seconds, and the number of stalls.\n\n**Season packs**\n- Episode searches also look for season packs (\"Show S02\", \"Season 2\") and complete-series packs.\n- Inside a pack, the episode is found even when the season is only in the folder name. Only that file downloads, starting with its beginning and end.\n- Choose source labels them \"Season pack\", \"Seasons 1–3 pack\" or \"Complete series pack\".\n- If a pack doesn't have the episode, the player moves to the next source and says why.\n\n**Series**\n- TV Shows from the sidebar opens at the top, with Play focused, like Movies.\n- Seasons switch when you press OK, not just on focus. Only the episode list reloads; the page, its scroll position and focus stay where they were.\n- The Play button at the top always shows your next episode, wherever you browse.\n\n**Skip intro and credits**\n- A \"Skip intro\" / \"Skip credits\" button appears when the video's chapters mark them. On TV it takes focus, so one press of OK skips.\n- Settings → Playback has \"Skip intros automatically\" and \"Skip credits automatically\".\n\n**Faster start**\n- Continue Watching and Up Next search for the best source in the background while you browse, so pressing Play starts sooner.\n- Back on the Android loading screen now leaves for good. The loading screen no longer comes back.\n- When playback switches to a backup source, the torrent that's already playing is never stopped.\n",
   "platforms": {
-    "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-macos.dmg",
-      "sha256": "cb2d28a531eb9f6e7a2c85afdbf303885fd951924f9b6324eb17431944add228",
-      "size": 82830319
-    },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-android.apk",
-      "sha256": "ff619b1a2e92fdcd7f8b225b00ba31ce1ab45d9960e8f7a9931993966e2f3378",
-      "size": 119729363
-    },
-    "windows": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-windows-setup.exe",
-      "sha256": "4aab8c4515779700ceac42cc95bae1c6dfbad1a2928cc46f8b00242771ef0cce",
-      "size": 37071607
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.16/Playhead-android.apk",
+      "sha256": "219a26e13c895fa4cf28fbc8bdb46dff80d93bf84fd1b75ea1ebe03c6b15e0eb",
+      "size": 119844071
     }
   }
 }
