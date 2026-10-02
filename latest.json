@@ -2,21 +2,21 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 11,
-  "tag": "v0.1.0-test.11",
-  "publishedAt": "2026-10-02T17:10:40Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.11",
-  "notes": "**Kids profiles fixed (lag, crashes, filtering)**\n- Kids rows now come from TMDB's own age-filtered lists (one request per row) instead of hundreds of full title downloads.\n- Any title whose age rating can't be confirmed is hidden.\n- Checks are small, cached and limited to 4 at a time.\n- A cold start into a kids profile no longer shows unfiltered rows first.\n\nWindows stays on build 6 for this test release.\n",
+  "build": 12,
+  "tag": "v0.1.0-test.12",
+  "publishedAt": "2026-10-02T17:25:56Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.12",
+  "notes": "**Player**\n- No volume control in the player on any device. Use the device's own volume; M still mutes on a keyboard.\n- TV: Left/Right reach every button in the bottom row (the volume slider was catching them).\n- Seeking: the focus ring sits on the seek dot.\n- The Back button in the player leaves it right away.\n\n**Resume**\n- Continue Watching, Up Next and history now open the exact episode and start playing from where you stopped.\n- The page underneath no longer steals the remote from the player.\n\nWindows stays on build 6 for this test release.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.11/Playhead-macos.dmg",
-      "sha256": "5b89f91a74227dd201fb260287bee2e11b48e4834a5fb563a77177400bdf1c78",
-      "size": 83147825
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.12/Playhead-macos.dmg",
+      "sha256": "64f6e3354801c5adf0f8b8862e187ba76b2fbfbf7db8fb0638a850106ce93f55",
+      "size": 83145730
     },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.11/Playhead-android.apk",
-      "sha256": "bf002b42bf699425f133018ac40054bd67149a3c6c012ce6ef26e3219db9eae4",
-      "size": 119614515
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.12/Playhead-android.apk",
+      "sha256": "1fcd9af1835c46a8dd0d5e02c404a2349b0df84913a020ebfa73cf82394ceab3",
+      "size": 119614471
     }
   }
 }
