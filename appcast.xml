@@ -6,24 +6,38 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 14)</title>
-      <pubDate>Fri, 02 Oct 2026 18:30:40 +0000</pubDate>
-      <sparkle:version>14</sparkle:version>
+      <title>Playhead 0.1.0 (build 15)</title>
+      <pubDate>Fri, 02 Oct 2026 19:40:23 +0000</pubDate>
+      <sparkle:version>15</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.14</link>
-      <description sparkle:format="markdown"><![CDATA[**Design polish**
-- Dialogs, sheets, menus and the update card sit on a near-solid surface, so text stays readable over any content (including over video in the player).
-- One consistent set of corner radii and one height per control type across the app.
-- Detail and person pages start at the top instead of floating mid-screen.
-- A cleaner search field, evenly inset dividers in Settings, a tidier onboarding card, and see-through cards in the source list.
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.15</link>
+      <description sparkle:format="markdown"><![CDATA[**Finding and starting sources**
+- The automatic pick puts healthy torrents first: more seeders and peers win, and near-dead releases are used only when nothing better is left.
+- While a source starts, the next two are tried alongside it. If the first delivers nothing within 8 s, playback switches to whichever already has data. The others are dropped at once.
+- Faster failover: a source that failed is never retried.
+- Choose source can sort by Recommended, Seeders, Size or Quality, and remembers your choice.
 
-Windows stays on build 6 for this test release.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.14/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="hPKxbCqFDBjU9wk3afMRT62KW0Q8i8xrQpgcZ7TvWiFhc0aUjpX35r9XgQeZ+Y5HevQ1y4ZZoncVFP8pvbo9Aw==" length="83147241" />
+**Player**
+- Subtitles show on Android with both players.
+- Less background work while the controls are hidden (about 1 update a second instead of 4).
+- On narrow portrait screens the controls use two rows, so nothing gets squeezed.
+
+**Kids profiles**
+- TV rows also check each show's age rating in the background; anything unconfirmed disappears.
+
+**Polish**
+- Sheet titles line up with their content.
+- The person page is centred on phones.
+- The player settings sheet uses the shared corner sizes.
+
+**Windows**
+- Back in sync with macOS and Android.]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="z/LE46i43quE6DQPVfOS8xRFR/YaZHZypjijA9Y/N3Gepo6+Sd9mNtGxiPNHR0n7esSJJguGEy/2L40VS5P2Bw==" length="82830319" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: FTiCsuJjC18gfU7Z/kgJ5F/ttsYVaHW9GJPZ5U8xnvyYO6k4j2j8zCjvvfAseJrUuVqhV/1L0DyKPIj3PHWzCg==
-length: 1668
+edSignature: klEEC1ygBOIRgTqQQqApX2Pn9ZkcEh5/6t8lv0yQkKbVXVZUGsZoEAFeydEXkttnc+ysCPn6mE1DLVxe+3q1Cw==
+length: 2228
 -->

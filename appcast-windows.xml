@@ -6,24 +6,39 @@
     <description>Playhead update feed (Windows)</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 6)</title>
-      <pubDate>Fri, 02 Oct 2026 11:19:49 +0000</pubDate>
-      <sparkle:version>6</sparkle:version>
+      <title>Playhead 0.1.0 (build 15)</title>
+      <pubDate>Fri, 02 Oct 2026 19:40:24 +0000</pubDate>
+      <sparkle:version>15</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.6</link>
-      <description><![CDATA[<h4>What's new</h4>
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.15</link>
+      <description><![CDATA[<p><strong>Finding and starting sources</strong></p>
 <ul>
-<li><strong>Playhead for Android TV and Google TV.</strong> Install it once (guide on the Playhead page, under Docs → Android TV); after that it updates itself.</li>
-<li><strong>Remote and keyboard navigation.</strong> The whole app works with a TV remote or the arrow keys, with a clear highlight on the selected item. OK/Enter selects; Back/Escape goes back.</li>
-<li><strong>macOS:</strong> the update window can no longer hide behind Playhead's window. Settings → About shows the exact version you're running.</li>
+<li>The automatic pick puts healthy torrents first: more seeders and peers win, and near-dead releases are used only when nothing better is left.</li>
+<li>While a source starts, the next two are tried alongside it. If the first delivers nothing within 8 s, playback switches to whichever already has data. The others are dropped at once.</li>
+<li>Faster failover: a source that failed is never retried.</li>
+<li>Choose source can sort by Recommended, Seeders, Size or Quality, and remembers your choice.</li>
 </ul>
-<h4>Installing on Android TV / Google TV</h4>
+<p><strong>Player</strong></p>
 <ul>
-<li>No computer: install <strong>Downloader</strong> from the Play Store on the TV, open it and enter <code>miloshampl.github.io/playhead-releases/apk</code>.</li>
-<li>From a computer: <code>adb connect</code> your TV over Wi-Fi and <code>adb install Playhead-android.apk</code>.</li>
-<li>The first update asks once to allow Playhead to install apps; later updates install by themselves.</li>
+<li>Subtitles show on Android with both players.</li>
+<li>Less background work while the controls are hidden (about 1 update a second instead of 4).</li>
+<li>On narrow portrait screens the controls use two rows, so nothing gets squeezed.</li>
+</ul>
+<p><strong>Kids profiles</strong></p>
+<ul>
+<li>TV rows also check each show's age rating in the background; anything unconfirmed disappears.</li>
+</ul>
+<p><strong>Polish</strong></p>
+<ul>
+<li>Sheet titles line up with their content.</li>
+<li>The person page is centred on phones.</li>
+<li>The player settings sheet uses the shared corner sizes.</li>
+</ul>
+<p><strong>Windows</strong></p>
+<ul>
+<li>Back in sync with macOS and Android.</li>
 </ul>]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.6/Playhead-windows-setup.exe" type="application/octet-stream" sparkle:os="windows" sparkle:installerArguments="/SILENT /SP- /SUPPRESSMSGBOXES /NORESTART" sparkle:edSignature="YEF+xBBc8L0OISxJH8rdgLqPF/a2nevY2dlE9jFls0l+6W5b4k6QcPVmMRA8lGNmwl/1SInL9IH+1CKqf3z2Dg==" length="36973853" />
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-windows-setup.exe" type="application/octet-stream" sparkle:os="windows" sparkle:installerArguments="/SILENT /SP- /SUPPRESSMSGBOXES /NORESTART" sparkle:edSignature="qH62kzjgDIOXFdSpJsk+GU+1K5l8MaTaZFzr79l6pbL9yv8Dm6fj7cW0D+JaiH356fzdA+ap1+JpbCEIIGpNAA==" length="37071607" />
     </item>
   </channel>
 </rss>

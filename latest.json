@@ -2,21 +2,26 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 14,
-  "tag": "v0.1.0-test.14",
-  "publishedAt": "2026-10-02T18:30:40Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.14",
-  "notes": "**Design polish**\n- Dialogs, sheets, menus and the update card sit on a near-solid surface, so text stays readable over any content (including over video in the player).\n- One consistent set of corner radii and one height per control type across the app.\n- Detail and person pages start at the top instead of floating mid-screen.\n- A cleaner search field, evenly inset dividers in Settings, a tidier onboarding card, and see-through cards in the source list.\n\nWindows stays on build 6 for this test release.\n",
+  "build": 15,
+  "tag": "v0.1.0-test.15",
+  "publishedAt": "2026-10-02T19:40:24Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.15",
+  "notes": "**Finding and starting sources**\n- The automatic pick puts healthy torrents first: more seeders and peers win, and near-dead releases are used only when nothing better is left.\n- While a source starts, the next two are tried alongside it. If the first delivers nothing within 8 s, playback switches to whichever already has data. The others are dropped at once.\n- Faster failover: a source that failed is never retried.\n- Choose source can sort by Recommended, Seeders, Size or Quality, and remembers your choice.\n\n**Player**\n- Subtitles show on Android with both players.\n- Less background work while the controls are hidden (about 1 update a second instead of 4).\n- On narrow portrait screens the controls use two rows, so nothing gets squeezed.\n\n**Kids profiles**\n- TV rows also check each show's age rating in the background; anything unconfirmed disappears.\n\n**Polish**\n- Sheet titles line up with their content.\n- The person page is centred on phones.\n- The player settings sheet uses the shared corner sizes.\n\n**Windows**\n- Back in sync with macOS and Android.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.14/Playhead-macos.dmg",
-      "sha256": "1787d3c1c7a1f48199af4be4dc7437cb43c6c964d9e395a66cb492cb6a7aba0f",
-      "size": 83147241
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-macos.dmg",
+      "sha256": "cb2d28a531eb9f6e7a2c85afdbf303885fd951924f9b6324eb17431944add228",
+      "size": 82830319
     },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.14/Playhead-android.apk",
-      "sha256": "99a86e2dadc8e640baf385ad48a36c588e172fcd8cb6e7b308fb4bbfa0f3e3b6",
-      "size": 119614675
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-android.apk",
+      "sha256": "ff619b1a2e92fdcd7f8b225b00ba31ce1ab45d9960e8f7a9931993966e2f3378",
+      "size": 119729363
+    },
+    "windows": {
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.15/Playhead-windows-setup.exe",
+      "sha256": "4aab8c4515779700ceac42cc95bae1c6dfbad1a2928cc46f8b00242771ef0cce",
+      "size": 37071607
     }
   }
 }
