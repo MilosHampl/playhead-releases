@@ -2,21 +2,21 @@
   "schema": 1,
   "name": "Playhead",
   "version": "0.1.0",
-  "build": 9,
-  "tag": "v0.1.0-test.9",
-  "publishedAt": "2026-10-02T16:26:24Z",
-  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.9",
-  "notes": "**Smooth playback on Android (TV, Google TV sticks, phones, tablets)**\n- New playback engine on Android: ExoPlayer, the player Plex uses. It decodes on the device's video hardware and draws straight to the screen, which keeps CPU use low. If a file isn't supported, Playhead switches to the compatibility player automatically, at the same position.\n- Change it in Settings → Playback → Player engine.\n- The player's stats overlay shows the active decoder and any dropped frames.\n- Auto picks 1080p at most on Fast start and Balanced. Best quality may pick 4K, but only if the device can hardware-decode it.\n\n**Player**\n- New Quality picker in the player (the \"1080p\" button). It lists every available quality with its size and approximate data use per hour, and you can pick any of them.\n- TV remote:\n  - OK plays or pauses.\n  - Left/Right seek 10 s.\n  - Up/Down open the controls. They no longer change the volume.\n  - The remote's media keys work.\n\n**Android TV navigation**\n- Left from the first item of any row goes back to the sidebar.\n- Your profile is at the top of the sidebar.\n- Opening a page lands on its first item at the top.\n- Text fields open the keyboard only when you press OK.\n- No more zoom on focus. Focus rings have a small gap from the item and aren't cut off.\n- The detail page's info table can be reached with the remote.\n\n**New**\n- Kids profiles with a PIN:\n  - Each kids profile has an age band (Up to 6, 7–12, 13–15, 16–17), based on TMDB age ratings for your country. Unrated titles are hidden.\n  - The PIN guards leaving a kids profile, opening Settings, and blocked titles. You can change it in Settings → Profiles & data.\n- Activity shows your watch history: resume, remove one entry, or clear it all.\n\n**Security**\n- Playhead only ever downloads and plays the video file. Torrents containing programs, scripts or disguised files are blocked.\n- Downloads get the system's \"downloaded from the internet\" mark.\n\n**Android phones and tablets**\n- Real app icon.\n- The player goes fullscreen in landscape.\n- The keyboard no longer covers fields.\n- The back gesture works.\n- Touch targets are larger.\n\n**Also**\n- Settings → Profiles & data → Reset Playhead deletes everything on this device and starts over from setup. It asks for the PIN if one is set.\n- The built-in Internet Archive source finds the Blender open movies again (Sintel, Big Buck Bunny…). It was only searching the feature-films collection, and its search timed out before results came back.\n- During onboarding on TV, Next has focus as soon as the catalogue is ready.\n- Back from a detail page returns to the poster you opened, not the sidebar.\n- Old update files are deleted after updating.\n- Appearance settings appear only on devices that support them.\n\nWindows stays on build 6 for this test release.\n",
+  "build": 10,
+  "tag": "v0.1.0-test.10",
+  "publishedAt": "2026-10-02T16:49:13Z",
+  "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.10",
+  "notes": "**Player on TV: every control is reachable with the remote**\n- With the controls hidden, any arrow shows them and lands on Play. Arrows no longer seek.\n- Left/Right move along a row: the top bar (Back, Quality, Stats, Settings), the seek bar, or the bottom bar.\n- Up/Down move between rows. Down from the seek bar goes to Play.\n- Seeking: focus the seek bar's dot and press Left/Right. The jump applies after a short pause, or straight away on OK.\n- The Quality preset you pick in Settings → Quality now drives Auto's choice.\n\nWindows stays on build 6 for this test release.\n",
   "platforms": {
     "macos": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.9/Playhead-macos.dmg",
-      "sha256": "04b25f9b93905243f271648853f9bd10e0d0ba261a529ece104bc30820469a07",
-      "size": 82848707
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.10/Playhead-macos.dmg",
+      "sha256": "851944f2a5b8c13fba7ed0241fbe955b8bd546223761b1a094728f553abe571f",
+      "size": 83129355
     },
     "android": {
-      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.9/Playhead-android.apk",
-      "sha256": "755379f231c45ce9c82beb9de7b63a1eaefd0f1a7d66497300ce5861ff2451e0",
-      "size": 119516211
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.10/Playhead-android.apk",
+      "sha256": "f096e1bec7e5768392b874b8ed5113594f16516846c07d879628ef7402bf50f7",
+      "size": 119548979
     }
   }
 }

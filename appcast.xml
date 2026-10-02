@@ -6,65 +6,25 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 9)</title>
-      <pubDate>Fri, 02 Oct 2026 16:26:24 +0000</pubDate>
-      <sparkle:version>9</sparkle:version>
+      <title>Playhead 0.1.0 (build 10)</title>
+      <pubDate>Fri, 02 Oct 2026 16:49:12 +0000</pubDate>
+      <sparkle:version>10</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.9</link>
-      <description sparkle:format="markdown"><![CDATA[**Smooth playback on Android (TV, Google TV sticks, phones, tablets)**
-- New playback engine on Android: ExoPlayer, the player Plex uses. It decodes on the device's video hardware and draws straight to the screen, which keeps CPU use low. If a file isn't supported, Playhead switches to the compatibility player automatically, at the same position.
-- Change it in Settings → Playback → Player engine.
-- The player's stats overlay shows the active decoder and any dropped frames.
-- Auto picks 1080p at most on Fast start and Balanced. Best quality may pick 4K, but only if the device can hardware-decode it.
-
-**Player**
-- New Quality picker in the player (the "1080p" button). It lists every available quality with its size and approximate data use per hour, and you can pick any of them.
-- TV remote:
-  - OK plays or pauses.
-  - Left/Right seek 10 s.
-  - Up/Down open the controls. They no longer change the volume.
-  - The remote's media keys work.
-
-**Android TV navigation**
-- Left from the first item of any row goes back to the sidebar.
-- Your profile is at the top of the sidebar.
-- Opening a page lands on its first item at the top.
-- Text fields open the keyboard only when you press OK.
-- No more zoom on focus. Focus rings have a small gap from the item and aren't cut off.
-- The detail page's info table can be reached with the remote.
-
-**New**
-- Kids profiles with a PIN:
-  - Each kids profile has an age band (Up to 6, 7–12, 13–15, 16–17), based on TMDB age ratings for your country. Unrated titles are hidden.
-  - The PIN guards leaving a kids profile, opening Settings, and blocked titles. You can change it in Settings → Profiles & data.
-- Activity shows your watch history: resume, remove one entry, or clear it all.
-
-**Security**
-- Playhead only ever downloads and plays the video file. Torrents containing programs, scripts or disguised files are blocked.
-- Downloads get the system's "downloaded from the internet" mark.
-
-**Android phones and tablets**
-- Real app icon.
-- The player goes fullscreen in landscape.
-- The keyboard no longer covers fields.
-- The back gesture works.
-- Touch targets are larger.
-
-**Also**
-- Settings → Profiles & data → Reset Playhead deletes everything on this device and starts over from setup. It asks for the PIN if one is set.
-- The built-in Internet Archive source finds the Blender open movies again (Sintel, Big Buck Bunny…). It was only searching the feature-films collection, and its search timed out before results came back.
-- During onboarding on TV, Next has focus as soon as the catalogue is ready.
-- Back from a detail page returns to the poster you opened, not the sidebar.
-- Old update files are deleted after updating.
-- Appearance settings appear only on devices that support them.
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.10</link>
+      <description sparkle:format="markdown"><![CDATA[**Player on TV: every control is reachable with the remote**
+- With the controls hidden, any arrow shows them and lands on Play. Arrows no longer seek.
+- Left/Right move along a row: the top bar (Back, Quality, Stats, Settings), the seek bar, or the bottom bar.
+- Up/Down move between rows. Down from the seek bar goes to Play.
+- Seeking: focus the seek bar's dot and press Left/Right. The jump applies after a short pause, or straight away on OK.
+- The Quality preset you pick in Settings → Quality now drives Auto's choice.
 
 Windows stays on build 6 for this test release.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.9/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="4stiKxJJX6gS6zLYgd8kjmfvTTTa0zVD6Zbi6VR+b1fvi/VDTej6yLoIpVwZ+kqpFSbyePJRrQE5b6lBzBgwCg==" length="82848707" />
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.10/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="w15bdW6a9OQeOOzmfS8ng1Cd9fUL7j4VagWnya6e17v6xRq3EKuVGaV/uHoESh/ge1PWGhVsUD2xh5lUBNLYDw==" length="83129355" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: 20schbkjau8Dw4EZzjoTWEQ/6Wxy/XsBzwygvgO0aWT730ANMGxTzHXA6nMntpoq/ZVRT9X1RWST2Yp3s6myBg==
-length: 3972
+edSignature: EYQN8XjySXy1UFH6fMLbD0TyuX7TkvZiTyB1qTxVyIfrNeUwtLgqUqdbXcajSW+8iyi27af+EIk7zPWNf7ppAQ==
+length: 1737
 -->
