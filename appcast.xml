@@ -6,43 +6,25 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 16)</title>
-      <pubDate>Fri, 02 Oct 2026 23:00:22 +0000</pubDate>
-      <sparkle:version>16</sparkle:version>
+      <title>Playhead 0.1.0 (build 17)</title>
+      <pubDate>Sat, 03 Oct 2026 08:22:39 +0000</pubDate>
+      <sparkle:version>17</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.16</link>
-      <description sparkle:format="markdown"><![CDATA[**Smoother playback on Android TV**
-- Video goes straight to the screen through its own hardware layer, as in Plex. Before, Flutter redrew every frame, which was the lag on large files.
-- If that fails, Playhead falls back to the old output by itself. You can also pick it in Settings → Playback → Video output.
-- The player keeps 30–120 s buffered. After a stall it waits for 8 s of buffer, so it doesn't stall again straight away.
-- A short drop in peers no longer brings up the stall screen while plenty is buffered.
-- Stats overlay: dropped frames, download speed vs. the file's bitrate, buffer seconds, and the number of stalls.
-
-**Season packs**
-- Episode searches also look for season packs ("Show S02", "Season 2") and complete-series packs.
-- Inside a pack, the episode is found even when the season is only in the folder name. Only that file downloads, starting with its beginning and end.
-- Choose source labels them "Season pack", "Seasons 1–3 pack" or "Complete series pack".
-- If a pack doesn't have the episode, the player moves to the next source and says why.
-
-**Series**
-- TV Shows from the sidebar opens at the top, with Play focused, like Movies.
-- Seasons switch when you press OK, not just on focus. Only the episode list reloads; the page, its scroll position and focus stay where they were.
-- The Play button at the top always shows your next episode, wherever you browse.
-
-**Skip intro and credits**
-- A "Skip intro" / "Skip credits" button appears when the video's chapters mark them. On TV it takes focus, so one press of OK skips.
-- Settings → Playback has "Skip intros automatically" and "Skip credits automatically".
-
-**Faster start**
-- Continue Watching and Up Next search for the best source in the background while you browse, so pressing Play starts sooner.
-- Back on the Android loading screen now leaves for good. The loading screen no longer comes back.
-- When playback switches to a backup source, the torrent that's already playing is never stopped.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.16/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="ZZxYxQCUGbogZ+A/VS/1ny5LtOD49VONgqJX/Pwb2eA8Rgva7y7/SlCKUqdAlUwGtW6eksvXR8mT4CgcK61SBA==" length="82870214" />
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.17</link>
+      <description sparkle:format="markdown"><![CDATA[**Subtitles from the internet, no account needed**
+- When a video has no subtitles in your language, Playhead finds them online by itself, from OpenSubtitles through Stremio's public add-on. No key, no login.
+- It never holds up playback. When it finds some, you see "Subtitles: English (online)".
+- For files you've fully downloaded, Playhead picks subtitles timed for that exact release. For streams, it picks the closest release name.
+- In the player: Settings → Subtitles → Find subtitles online → Search lists what's available. Results that match your file are marked, and OK adds one.
+- Stremio add-ons you've added that offer subtitles are searched too.
+- Settings → Subtitles → "Find subtitles online" turns it off. Your own OpenSubtitles key is now optional; when it's set, it's used first.
+- Downloaded subtitles are text only. They are size-checked, converted to UTF-8 and stored locally before the player reads them.]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.17/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="gxIo4uHo/QK5RivWXqLHuZX8ESz5gEErhrdDR8j9Omo17vxrtUxxVjqTINBwiy0H2rlyf+40NfFSWpPy2BddAQ==" length="82905409" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: 1hyefCvbOCZRyEQ03rzY5TqrPTvrYOfx1QBdllOxU6SQJ+8k3F2hHWBqu2lGlLdnSyXVfGM6VmDLJ/XKZ46aBA==
-length: 3159
+edSignature: t1l/iRwU8/PB7ehEotNZruu7QyQa5qXMtGLjsZ1X4f4DZQQy/x8911YgeYbvIgAAzmXeIgbe5LU6hzZ5W39tDg==
+length: 2099
 -->
