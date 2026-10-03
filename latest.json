@@ -4,10 +4,15 @@
   "version": "0.1.0",
   "build": 18,
   "tag": "v0.1.0-test.18",
-  "publishedAt": "2026-10-03T10:25:30Z",
+  "publishedAt": "2026-10-03T10:30:43Z",
   "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.18",
   "notes": "**Stability and speed, especially on TVs**\n- Detail and series pages no longer search for sources or test torrents as soon as they open. That's what made the TV freeze after a few seconds and then crash. Searching starts only when you press Play or Choose source.\n- Background preloading looks up links only (no data), for a single title: your most recent Continue Watching or Up Next episode. It runs after about 10 s of idle and stops when you start playing. It also actually keeps its result now.\n- Source ranking no longer runs on the thread that draws the screen, so the interface stays responsive while results come in.\n- Searches are lighter: at most 4 requests at once across all indexers, and identical searches run only once and share their results. Leaving a page stops its search.\n- Images are decoded at the size they're shown and fetched from TMDB at smaller sizes. On TV the image cache is capped and cleared when Android runs low on memory.\n- On low-memory and 32-bit Android devices the torrent engine uses fewer peers and threads. The player's in-memory buffer is sized to the device's RAM; the engine still keeps about 45 s on disk.\n- Less redrawing when focus moves, and no entrance animations on TV.\n- TMDB details are kept in memory, so opening the same title again is instant.\n",
   "platforms": {
+    "macos": {
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.18/Playhead-macos.dmg",
+      "sha256": "27d60b0d149104894d014a3bdf05a14a9970c4d610f415217ae755efbe9c9b0f",
+      "size": 83226775
+    },
     "android": {
       "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.18/Playhead-android.apk",
       "sha256": "85055fd7ab7687e7718d0b0729e11e6ed813356c532d0714bd83e8eb842eb405",

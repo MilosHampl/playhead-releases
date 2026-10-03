@@ -6,25 +6,26 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 17)</title>
-      <pubDate>Sat, 03 Oct 2026 08:29:09 +0000</pubDate>
-      <sparkle:version>17</sparkle:version>
+      <title>Playhead 0.1.0 (build 18)</title>
+      <pubDate>Sat, 03 Oct 2026 10:30:43 +0000</pubDate>
+      <sparkle:version>18</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.17</link>
-      <description sparkle:format="markdown"><![CDATA[**Subtitles from the internet, no account needed**
-- When a video has no subtitles in your language, Playhead finds them online by itself, from OpenSubtitles through Stremio's public add-on. No key, no login.
-- It never holds up playback. When it finds some, you see "Subtitles: English (online)".
-- For files you've fully downloaded, Playhead picks subtitles timed for that exact release. For streams, it picks the closest release name.
-- In the player: Settings → Subtitles → Find subtitles online → Search lists what's available. Results that match your file are marked, and OK adds one.
-- Stremio add-ons you've added that offer subtitles are searched too.
-- Settings → Subtitles → "Find subtitles online" turns it off. Your own OpenSubtitles key is now optional; when it's set, it's used first.
-- Downloaded subtitles are text only. They are size-checked, converted to UTF-8 and stored locally before the player reads them.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.17/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="gxIo4uHo/QK5RivWXqLHuZX8ESz5gEErhrdDR8j9Omo17vxrtUxxVjqTINBwiy0H2rlyf+40NfFSWpPy2BddAQ==" length="82905409" />
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.18</link>
+      <description sparkle:format="markdown"><![CDATA[**Stability and speed, especially on TVs**
+- Detail and series pages no longer search for sources or test torrents as soon as they open. That's what made the TV freeze after a few seconds and then crash. Searching starts only when you press Play or Choose source.
+- Background preloading looks up links only (no data), for a single title: your most recent Continue Watching or Up Next episode. It runs after about 10 s of idle and stops when you start playing. It also actually keeps its result now.
+- Source ranking no longer runs on the thread that draws the screen, so the interface stays responsive while results come in.
+- Searches are lighter: at most 4 requests at once across all indexers, and identical searches run only once and share their results. Leaving a page stops its search.
+- Images are decoded at the size they're shown and fetched from TMDB at smaller sizes. On TV the image cache is capped and cleared when Android runs low on memory.
+- On low-memory and 32-bit Android devices the torrent engine uses fewer peers and threads. The player's in-memory buffer is sized to the device's RAM; the engine still keeps about 45 s on disk.
+- Less redrawing when focus moves, and no entrance animations on TV.
+- TMDB details are kept in memory, so opening the same title again is instant.]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.18/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="sk5DDF5ehsB5xPX1xq3rmC+eQOBqk/A0I/ygyxdcsplVGj+aiTbtL4q0p6/fm4ikIEiR4gvaQrSfjet/IhgLAw==" length="83226775" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: Xi3vODoWdry+EG5lhEJXiojU/KMHCYOZst6SSu2dzAs5odPp3/nf4Rzlz0G8SI1JYba8T7n1zzoc2Oiwkk19Bg==
-length: 2099
+edSignature: 1kLkrHxA65vrEOLo4EmXPRBBZPhT6UrFGtOwaVVkjARL90l2ucCRSgiHCJRD0nOk2rsuZ/AT854omSq1J+oeBw==
+length: 2460
 -->
