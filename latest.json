@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "build": 17,
   "tag": "v0.1.0-test.17",
-  "publishedAt": "2026-10-03T08:22:39Z",
+  "publishedAt": "2026-10-03T08:29:10Z",
   "releaseUrl": "https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.17",
   "notes": "**Subtitles from the internet, no account needed**\n- When a video has no subtitles in your language, Playhead finds them online by itself, from OpenSubtitles through Stremio's public add-on. No key, no login.\n- It never holds up playback. When it finds some, you see \"Subtitles: English (online)\".\n- For files you've fully downloaded, Playhead picks subtitles timed for that exact release. For streams, it picks the closest release name.\n- In the player: Settings → Subtitles → Find subtitles online → Search lists what's available. Results that match your file are marked, and OK adds one.\n- Stremio add-ons you've added that offer subtitles are searched too.\n- Settings → Subtitles → \"Find subtitles online\" turns it off. Your own OpenSubtitles key is now optional; when it's set, it's used first.\n- Downloaded subtitles are text only. They are size-checked, converted to UTF-8 and stored locally before the player reads them.\n",
   "platforms": {
@@ -17,6 +17,11 @@
       "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.17/Playhead-android.apk",
       "sha256": "e7064badd9bf9a40b614607470de11fcc0f2f1af73347ff150e0044d03c6399d",
       "size": 120073503
+    },
+    "windows": {
+      "url": "https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.17/Playhead-windows-setup.exe",
+      "sha256": "0a7850b147e27277a0fff9309cfef0b61e11878f478b950c3784baeed780fa51",
+      "size": 37131127
     }
   }
 }
