@@ -6,22 +6,23 @@
     <description>Playhead update feed (Windows)</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 17)</title>
-      <pubDate>Sat, 03 Oct 2026 08:29:10 +0000</pubDate>
-      <sparkle:version>17</sparkle:version>
+      <title>Playhead 0.1.0 (build 18)</title>
+      <pubDate>Sat, 03 Oct 2026 10:41:39 +0000</pubDate>
+      <sparkle:version>18</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.17</link>
-      <description><![CDATA[<p><strong>Subtitles from the internet, no account needed</strong></p>
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.18</link>
+      <description><![CDATA[<p><strong>Stability and speed, especially on TVs</strong></p>
 <ul>
-<li>When a video has no subtitles in your language, Playhead finds them online by itself, from OpenSubtitles through Stremio's public add-on. No key, no login.</li>
-<li>It never holds up playback. When it finds some, you see "Subtitles: English (online)".</li>
-<li>For files you've fully downloaded, Playhead picks subtitles timed for that exact release. For streams, it picks the closest release name.</li>
-<li>In the player: Settings → Subtitles → Find subtitles online → Search lists what's available. Results that match your file are marked, and OK adds one.</li>
-<li>Stremio add-ons you've added that offer subtitles are searched too.</li>
-<li>Settings → Subtitles → "Find subtitles online" turns it off. Your own OpenSubtitles key is now optional; when it's set, it's used first.</li>
-<li>Downloaded subtitles are text only. They are size-checked, converted to UTF-8 and stored locally before the player reads them.</li>
+<li>Detail and series pages no longer search for sources or test torrents as soon as they open. That's what made the TV freeze after a few seconds and then crash. Searching starts only when you press Play or Choose source.</li>
+<li>Background preloading looks up links only (no data), for a single title: your most recent Continue Watching or Up Next episode. It runs after about 10 s of idle and stops when you start playing. It also actually keeps its result now.</li>
+<li>Source ranking no longer runs on the thread that draws the screen, so the interface stays responsive while results come in.</li>
+<li>Searches are lighter: at most 4 requests at once across all indexers, and identical searches run only once and share their results. Leaving a page stops its search.</li>
+<li>Images are decoded at the size they're shown and fetched from TMDB at smaller sizes. On TV the image cache is capped and cleared when Android runs low on memory.</li>
+<li>On low-memory and 32-bit Android devices the torrent engine uses fewer peers and threads. The player's in-memory buffer is sized to the device's RAM; the engine still keeps about 45 s on disk.</li>
+<li>Less redrawing when focus moves, and no entrance animations on TV.</li>
+<li>TMDB details are kept in memory, so opening the same title again is instant.</li>
 </ul>]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.17/Playhead-windows-setup.exe" type="application/octet-stream" sparkle:os="windows" sparkle:installerArguments="/SILENT /SP- /SUPPRESSMSGBOXES /NORESTART" sparkle:edSignature="fM5LV5BNTZRoW1Kv/LQQP8mKUJkbwUAK7+3iy5xFOTggzfAEpyXzb8tMkW2/eUrtx3INPvlFMMesU+EdfOukBw==" length="37131127" />
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.18/Playhead-windows-setup.exe" type="application/octet-stream" sparkle:os="windows" sparkle:installerArguments="/SILENT /SP- /SUPPRESSMSGBOXES /NORESTART" sparkle:edSignature="FwDNCc/nMK80FJVXcFv5VLL/N4sx83Z52osyVk0NqtRzUtscu+NVorLsiH88sFKap0toT4zN2gFPWZOKtK/QBw==" length="37153572" />
     </item>
   </channel>
 </rss>
