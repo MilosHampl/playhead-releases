@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playhead</title>
-  <meta name="description" content="Playhead streams video while it downloads, in a native player on macOS, Windows and Android TV. No login, no server, no data collection: everything runs on your Mac.">
+  <meta name="description" content="Playhead streams video while it downloads, in a native player on macOS, Windows, Linux and Android TV. No login, no server, no data collection: everything runs on your Mac.">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -31,10 +31,12 @@
           Download for macOS</a>
         <a class="btn" id="dl-win" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-windows-setup.exe">
           Download for Windows</a>
+        <a class="btn" id="dl-linux" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-linux-x86_64.AppImage">
+          Download for Linux</a>
         <a class="btn" id="dl-tv" href="docs.html#android-tv">Android TV</a>
         <a class="btn" href="https://github.com/MilosHampl/playhead-releases/releases">All releases</a>
       </div>
-      <p class="meta" id="meta">Test build · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · Android TV and Google TV · updates itself</p>
+      <p class="meta" id="meta">Test build · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · Linux (x86-64 AppImage) · Android TV and Google TV · updates itself</p>
     </div>
 
     <section class="private" id="private">
@@ -84,6 +86,8 @@
           </ol>
           <strong>First launch on Windows.</strong> The installer isn't code-signed yet, so SmartScreen says "Windows protected your PC":
           click <strong>More info → Run anyway</strong>. It installs for your user only, with no administrator prompt.
+          <strong>Linux.</strong> Make the AppImage executable (<code>chmod +x Playhead-linux-x86_64.AppImage</code>) and run it.
+          It needs FUSE 2 (<code>sudo apt install libfuse2</code>); without it run <code>./Playhead-linux-x86_64.AppImage --appimage-extract-and-run</code>.
           <p style="margin:10px 0 0">After that, Playhead updates itself: when a new build is out it shows what changed and installs it with one click.</p>
         </div>
       </div>
@@ -129,10 +133,13 @@
   </footer>
 
   <script>
-    // Windows visitors get the Windows download as the primary button.
+    // Windows and Linux visitors get their own download as the primary button.
     if (/Windows/.test(navigator.userAgent)) {
       const mac = document.getElementById('dl-mac'), win = document.getElementById('dl-win');
       mac.classList.remove('primary'); win.classList.add('primary'); win.after(mac);
+    } else if (/Linux|X11/.test(navigator.userAgent) && !/Android/.test(navigator.userAgent)) {
+      const mac = document.getElementById('dl-mac'), lin = document.getElementById('dl-linux');
+      mac.classList.remove('primary'); lin.classList.add('primary'); lin.after(mac);
     }
     // Show the latest release's version; the static links above work without this.
     fetch('https://api.github.com/repos/MilosHampl/playhead-releases/releases/latest')
@@ -141,12 +148,15 @@
         const assets = rel.assets || [];
         const dmg = assets.find(a => a.name.endsWith('.dmg'));
         const exe = assets.find(a => a.name.endsWith('.exe'));
+        const appimage = assets.find(a => a.name.endsWith('.AppImage'));
         const date = new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
         document.getElementById('meta').textContent =
-          `${rel.name || rel.tag_name} · ${date} · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · Android TV and Google TV · updates itself`;
+          `${rel.name || rel.tag_name} · ${date} · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · Linux (x86-64 AppImage) · Android TV and Google TV · updates itself`;
         if (dmg) document.getElementById('dl-mac').href = dmg.browser_download_url;
         if (exe) document.getElementById('dl-win').href = exe.browser_download_url;
         else document.getElementById('dl-win').remove();
+        if (appimage) document.getElementById('dl-linux').href = appimage.browser_download_url;
+        else document.getElementById('dl-linux').remove();
         if (!assets.some(a => a.name.endsWith('.apk'))) document.getElementById('dl-tv').remove();
       })
       .catch(() => {});

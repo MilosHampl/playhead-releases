@@ -42,6 +42,15 @@
         open it and drag <strong>Playhead</strong> into <strong>Applications</strong>. It needs macOS 12 or later and runs natively on Apple Silicon and Intel Macs.</p>
       <p><strong>Windows:</strong> download <a href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-windows-setup.exe">Playhead-windows-setup.exe</a>
         and run it. It needs 64-bit Windows 10 or 11 and installs for your user only (no administrator prompt).</p>
+      <p><strong>Linux (x86-64):</strong> download <a href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-linux-x86_64.AppImage">Playhead-linux-x86_64.AppImage</a>,
+        make it executable (<code>chmod +x Playhead-linux-x86_64.AppImage</code>) and run it. It bundles the video player (libmpv with ffmpeg) and uses your desktop's GTK 3;
+        it needs a distribution with glibc 2.35 or newer (Ubuntu 22.04, Debian 12, Fedora 36 or later) and X11 or Wayland.
+        AppImages need FUSE 2: install <code>libfuse2</code> (Ubuntu 22.04: <code>sudo apt install libfuse2</code>; Ubuntu 24.04: <code>libfuse2t64</code>; Fedora: <code>fuse-libs</code>).
+        Without it, run <code>./Playhead-linux-x86_64.AppImage --appimage-extract-and-run</code>.
+        Prefer no AppImage? <a href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-linux-x86_64.tar.gz">Playhead-linux-x86_64.tar.gz</a>
+        is the plain app folder: unpack it, install <code>libmpv2</code> (or <code>libmpv1</code> on Ubuntu 22.04 and Debian 12) and <code>libgtk-3-0</code>, and run <code>./playhead</code>.
+        Linux has no installer, so Playhead tells you when a new build is out and its <strong>Download</strong> button opens the new AppImage; replace the old file with it.
+        External players: <strong>Open in VLC</strong> or <strong>mpv</strong> in the player works when <code>vlc</code> or <code>mpv</code> is installed.</p>
       <p><strong>Updates</strong> install themselves: when a new build is out, Playhead shows what changed and an <strong>Install Update</strong> button,
         downloads it, checks its signature and restarts into the new version. Your profiles, progress and settings are kept.
         Settings → About → Updates has <strong>Check now</strong> and the switches. (Test build 3 and older can't update themselves: install a newer build by hand once.)</p>
@@ -160,7 +169,7 @@
         <li><strong>Uploading</strong>: like every BitTorrent client, Playhead shares pieces with other peers while it plays, capped at 1 MB/s by default (Settings → Network). Other peers can see your IP address.</li>
         <li><strong>No login, no server, no data collection.</strong> Playhead needs no account, has no servers of its own and collects nothing: no analytics, tracking or telemetry. Everything runs on your Mac.</li>
         <li><strong>What leaves your computer</strong>: requests to The Movie Database for posters and details, searches to the Internet Archive and to sources you add, indexer definitions from GitHub when you add an indexer, BitTorrent traffic while you watch, a version check at launch and once a day (see below), and OpenSubtitles requests if you add a key. Nothing else.</li>
-        <li><strong>Update checks</strong>: at launch and once a day Playhead downloads one small static file from this site — <code>appcast.xml</code> on macOS, <code>appcast-windows.xml</code> on Windows, <code>latest.json</code> elsewhere — to see whether a newer version exists. The request carries nothing about you beyond what any web request does: your IP address, and the app's name and version in the User-Agent. No account, no identifiers, no analytics. Turn it off in <strong>Settings → About → Updates</strong>. On macOS, the update itself downloads from GitHub Releases and is verified with an EdDSA signature before it installs.</li>
+        <li><strong>Update checks</strong>: at launch and once a day Playhead downloads one small static file from this site — <code>appcast.xml</code> on macOS, <code>appcast-windows.xml</code> on Windows, <code>latest.json</code> on Linux and Android — to see whether a newer version exists. The request carries nothing about you beyond what any web request does: your IP address, and the app's name and version in the User-Agent. No account, no identifiers, no analytics. Turn it off in <strong>Settings → About → Updates</strong>. On macOS, the update itself downloads from GitHub Releases and is verified with an EdDSA signature before it installs.</li>
       </ul>
 
       <h2 id="troubleshooting">Troubleshooting</h2>
@@ -174,7 +183,7 @@
       <p>Quit Playhead and delete <code>~/Library/Containers/com.miloshampl.playhead</code> — this removes all profiles, progress and settings (export first if you want to keep them).</p>
 
       <h2 id="report">Reporting a problem</h2>
-      <p><a href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Open an issue</a> with the version (Settings → About), your macOS or Windows version and computer model,
+      <p><a href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Open an issue</a> with the version (Settings → About), your macOS, Windows or Linux version and computer model,
         what you did, what you expected, and what happened. A screenshot or screen recording helps a lot.</p>
 
       <h2 id="licences">Open-source components</h2>
