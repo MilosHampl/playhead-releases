@@ -6,23 +6,61 @@
     <description>Playhead update feed (Windows)</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 18)</title>
-      <pubDate>Sat, 03 Oct 2026 10:41:39 +0000</pubDate>
-      <sparkle:version>18</sparkle:version>
+      <title>Playhead 0.1.0 (build 19)</title>
+      <pubDate>Wed, 14 Oct 2026 13:41:56 +0000</pubDate>
+      <sparkle:version>19</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.18</link>
-      <description><![CDATA[<p><strong>Stability and speed, especially on TVs</strong></p>
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.19</link>
+      <description><![CDATA[<p><strong>Now on Linux</strong></p>
 <ul>
-<li>Detail and series pages no longer search for sources or test torrents as soon as they open. That's what made the TV freeze after a few seconds and then crash. Searching starts only when you press Play or Choose source.</li>
-<li>Background preloading looks up links only (no data), for a single title: your most recent Continue Watching or Up Next episode. It runs after about 10 s of idle and stops when you start playing. It also actually keeps its result now.</li>
-<li>Source ranking no longer runs on the thread that draws the screen, so the interface stays responsive while results come in.</li>
-<li>Searches are lighter: at most 4 requests at once across all indexers, and identical searches run only once and share their results. Leaving a page stops its search.</li>
-<li>Images are decoded at the size they're shown and fetched from TMDB at smaller sizes. On TV the image cache is capped and cleared when Android runs low on memory.</li>
-<li>On low-memory and 32-bit Android devices the torrent engine uses fewer peers and threads. The player's in-memory buffer is sized to the device's RAM; the engine still keeps about 45 s on disk.</li>
-<li>Less redrawing when focus moves, and no entrance animations on TV.</li>
-<li>TMDB details are kept in memory, so opening the same title again is instant.</li>
+<li>A Linux build (x86-64 AppImage) joins macOS, Windows and Android/Google TV. Download it, make it executable and run it; see the install notes on the download page.</li>
+</ul>
+<p><strong>A new logo</strong></p>
+<ul>
+<li>The play button, cut into pieces like a torrent: the parts just after the playhead are in, one further on is still missing, the next one already arrived. It's now the app icon on every platform (macOS and Windows were still showing a placeholder) and the Android TV banner.</li>
+</ul>
+<p><strong>TV remote, rebuilt</strong></p>
+<ul>
+<li>Moving around works the same way on every screen. Each row, list and grid remembers where you were, so going back up lands on the poster you left. Left at the edge of a page always reaches the sidebar, and focus never jumps diagonally between rows.</li>
+<li>Sliders: OK starts adjusting, ◀ ▶ change the value, OK or Back finishes. Otherwise the arrows just move past them.</li>
+<li>Hold OK on a poster or episode to open its menu (most remotes have no Menu key).</li>
+<li>The setup wizard works with a remote: OK presses the button you're on (it used to always jump to the next step) and Back goes to the previous step.</li>
+<li>Every dialog opens with focus on a sensible button, and focus is always visible.</li>
+<li>Faster: moving the focus no longer redraws posters, rows only scroll near their edges, the sidebar slides over the page instead of re-laying it out, and pages open with a lighter transition on TV.</li>
+</ul>
+<p><strong>Episodes get their own screen</strong></p>
+<ul>
+<li>Opening an episode (from a series, Up Next or Continue Watching) shows its still, description, progress and buttons — Resume, Start over, Choose source, Mark watched — with Resume ready, so OK, OK plays. Step to the next or previous episode from the same screen.</li>
+</ul>
+<p><strong>Player</strong></p>
+<ul>
+<li>On TV, Left/Right seek straight away with a small progress bar (hold to go faster: 10 s, then 30 s, then 60 s steps); Up/Down open the controls; OK pauses.</li>
+<li>The controls stay up longer (8 s on TV, 5 s elsewhere).</li>
+<li>Every player menu and dialog works with the remote, including Jump to time (new "More" button).</li>
+</ul>
+<p><strong>Calmer source switching, and you can see what's happening</strong></p>
+<ul>
+<li>Playhead only switches to another source after the current one has stalled for a while and the player is about to run dry, with a 15-second countdown. "Keep waiting" holds off for 2 minutes. A source that's still downloading is never dropped just because another one answered first.</li>
+<li>While loading or buffering you see what's going on: the stage, download speed against what the video needs, connected peers, how much is buffered, and backup sources warming up. A switch is announced with the reason.</li>
+<li>When the device runs out of storage you get "Storage is full" with a shortcut to the cache settings, instead of every source failing in turn.</li>
+<li>Errors are in plain words, with the technical detail behind a Details button.</li>
+</ul>
+<p><strong>Clearer</strong></p>
+<ul>
+<li>"No sources found" now says what was searched, how many results your quality settings hid (with "Show lower quality") and offers "Add sources".</li>
+<li>Plainer wording across setup and Settings; a dead network option is gone, and advanced network options are grouped.</li>
+<li>One style for empty pages, text fields and buttons; Settings is laid out more evenly.</li>
+</ul>
+<p><strong>Storage and stability</strong></p>
+<ul>
+<li>The streaming cache size is now automatic: it's worked out from the device's free space and memory at each launch (Settings → Cache lets you set your own).</li>
+<li>If Playhead can't start (for example a damaged database), it shows a screen with Try again and Reset instead of a blank window.</li>
+<li>If the torrent engine fails to start, Playhead retries it automatically.</li>
+<li>Catalog requests time out instead of hanging, and when you're offline the last known details are shown.</li>
+<li>A diagnostics log (Settings → About) you can copy or save when reporting a problem.</li>
+<li>Faster start-up and series pages, and fewer peers/threads on low-memory TVs.</li>
 </ul>]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.18/Playhead-windows-setup.exe" type="application/octet-stream" sparkle:os="windows" sparkle:installerArguments="/SILENT /SP- /SUPPRESSMSGBOXES /NORESTART" sparkle:edSignature="FwDNCc/nMK80FJVXcFv5VLL/N4sx83Z52osyVk0NqtRzUtscu+NVorLsiH88sFKap0toT4zN2gFPWZOKtK/QBw==" length="37153572" />
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.19/Playhead-windows-setup.exe" type="application/octet-stream" sparkle:os="windows" sparkle:installerArguments="/SILENT /SP- /SUPPRESSMSGBOXES /NORESTART" sparkle:edSignature="wH+o6sZorIclMm5LmI0RMvc8ElTIxk4I7AEPOyoIx5Gre7gGQtt0nDAd/xpItOZdJHo7XyYwxYPY/PXEu1cLCg==" length="37242089" />
     </item>
   </channel>
 </rss>
