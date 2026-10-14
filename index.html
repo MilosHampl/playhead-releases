@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Playhead</title>
-  <meta name="description" content="Playhead streams video while it downloads, in a native player on macOS, Windows, Linux and Android TV. No login, no server, no data collection: everything runs on your Mac.">
+  <title>Playhead — play while it downloads</title>
+  <meta name="description" content="Playhead streams video while it downloads, in a native player for macOS, Windows, Linux, Android and Android TV. No login, no server, no data collection: everything runs on your device.">
+  <meta name="theme-color" content="#0b0d12">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +16,7 @@
       <a class="brand" href="./"><img src="assets/logo.svg" alt="">Playhead</a>
       <nav class="links">
         <a href="#download">Download</a>
+        <a href="#whats-new">What's new</a>
         <a href="docs.html">Docs</a>
         <a href="https://github.com/MilosHampl/playhead-releases/issues">Report a problem</a>
       </nav>
@@ -21,32 +24,172 @@
   </header>
 
   <main>
-    <div class="wrap hero" id="download">
-      <h1>Play while it downloads.</h1>
-      <p class="pledge">No login. No server. No data collection. Everything runs on your computer.</p>
-      <p class="lead">Playhead streams a torrent's video in playback order through a small, bounded cache
-        and plays it in a native player. When a source stalls it switches to the next one on its own.</p>
-      <div class="actions">
-        <a class="btn primary" id="dl-mac" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg">
-          Download for macOS</a>
-        <a class="btn" id="dl-win" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-windows-setup.exe">
-          Download for Windows</a>
-        <a class="btn" id="dl-linux" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-linux-x86_64.AppImage">
-          Download for Linux</a>
-        <a class="btn" id="dl-tv" href="docs.html#android-tv">Android TV</a>
-        <a class="btn" href="https://github.com/MilosHampl/playhead-releases/releases">All releases</a>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span id="hero-release">Latest test build</span></p>
+          <h1>Play while it&nbsp;downloads.</h1>
+          <p class="pledge">No login. No server. No data collection.</p>
+          <p class="lead">Playhead streams a torrent's video in playback order through a small, bounded cache and plays it in a
+            native player. When a source stalls it switches to the next one on its own.</p>
+          <div class="actions">
+            <a class="btn primary big" id="hero-dl" href="#download">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" /></svg>
+              <span id="hero-dl-label">Download Playhead</span>
+            </a>
+            <a class="btn ghost big" href="#download">All platforms</a>
+          </div>
+          <p class="hero-meta" id="hero-meta">macOS · Windows · Linux · Android · Android TV — free, and it updates itself.</p>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <svg class="mark" viewBox="0 0 64 64">
+            <rect width="64" height="64" rx="14" fill="#10131A" />
+            <path d="M20 12.5 26.425 16.608v30.784L20 51.5Z" fill="#6C9BFF" />
+            <path d="M28.025 17.631 34.45 21.739v20.522l-6.425 4.108Z" fill="#6C9BFF" />
+            <path class="arriving" d="M36.05 22.761 42.475 26.869v10.262L36.05 41.239Z" fill="#6C9BFF" />
+            <path d="M44.075 27.892 50.5 32l-6.425 4.108Z" fill="#6C9BFF" />
+            <rect x="12.5" y="11" width="4.6" height="42" rx="2.3" fill="#F2F4F8" />
+          </svg>
+          <div class="pieces">
+            <span class="ph"></span>
+            <i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i>
+            <i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="ar"></i><i class="ar"></i>
+            <i></i><i class="in"></i><i class="ar"></i><i></i><i></i><i class="in"></i><i></i><i></i><i class="ar"></i><i></i>
+            <i></i><i></i><i class="in"></i><i></i>
+          </div>
+          <p class="pieces-caption">Pieces arrive out of order. Playhead fetches the ones just ahead of what you're watching first.</p>
+        </div>
       </div>
-      <p class="meta" id="meta">Test build · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · Linux (x86-64 AppImage) · Android TV and Google TV · updates itself</p>
-    </div>
+    </section>
+
+    <section class="downloads" id="download">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Download</h2>
+          <p id="release-line">The latest test build for every platform. Each one keeps itself up to date.</p>
+        </div>
+
+        <div class="platforms">
+          <article class="platform" data-os="macos">
+            <header>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5" /><path d="M2 19h20" /></svg>
+              <h3>macOS</h3>
+              <span class="chip mine-chip">Your system</span>
+            </header>
+            <p class="req">macOS 12 Monterey or later · Apple Silicon and Intel</p>
+            <a class="btn primary dl" data-asset="Playhead-macos.dmg" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg">
+              <span class="label">Download for Mac</span><span class="size" data-ext=".dmg">.dmg</span></a>
+            <p class="alt"><a data-sha="Playhead-macos.dmg" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-macos.dmg.sha256">SHA-256</a></p>
+            <ol class="steps">
+              <li>Open the DMG and drag <strong>Playhead</strong> into <strong>Applications</strong>.</li>
+              <li>Test builds aren't notarized, so macOS blocks the first launch: click <strong>Done</strong>, then
+                <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>.</li>
+            </ol>
+            <p class="updates"><span class="ok"></span>Updates install themselves (signed).</p>
+          </article>
+
+          <article class="platform" data-os="windows">
+            <header>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M3 9h18M6.5 6.5h.01M9 6.5h.01" /></svg>
+              <h3>Windows</h3>
+              <span class="chip mine-chip">Your system</span>
+            </header>
+            <p class="req">Windows 10 or 11 · 64-bit</p>
+            <a class="btn primary dl" data-asset="Playhead-windows-setup.exe" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-windows-setup.exe">
+              <span class="label">Download for Windows</span><span class="size" data-ext=".exe">.exe</span></a>
+            <p class="alt"><a data-sha="Playhead-windows-setup.exe" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-windows-setup.exe.sha256">SHA-256</a></p>
+            <ol class="steps">
+              <li>Run the installer. It installs for your user only, with no administrator prompt.</li>
+              <li>It isn't code-signed yet: if SmartScreen says "Windows protected your PC", click <strong>More info → Run anyway</strong>.</li>
+            </ol>
+            <p class="updates"><span class="ok"></span>Updates install themselves (signed).</p>
+          </article>
+
+          <article class="platform" data-os="linux">
+            <header>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="m7 9.5 3 2.5-3 2.5M12.5 15H17" /></svg>
+              <h3>Linux</h3>
+              <span class="chip mine-chip">Your system</span>
+            </header>
+            <p class="req">x86-64 · glibc 2.35+ (Ubuntu 22.04, Debian 12, Fedora 36 or newer) · X11 or Wayland</p>
+            <a class="btn primary dl" data-asset="Playhead-linux-x86_64.AppImage" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-linux-x86_64.AppImage">
+              <span class="label">Download AppImage</span><span class="size" data-ext=".AppImage">.AppImage</span></a>
+            <p class="alt">
+              <a data-asset="Playhead-linux-x86_64.tar.gz" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-linux-x86_64.tar.gz">.tar.gz <span class="size"></span></a>
+              <a data-sha="Playhead-linux-x86_64.AppImage" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-linux-x86_64.AppImage.sha256">SHA-256</a>
+            </p>
+            <ol class="steps">
+              <li><code>chmod +x Playhead-linux-x86_64.AppImage</code>, then run it. The video player is bundled.</li>
+              <li>AppImages need FUSE 2 (<code>libfuse2</code>). Without it, run with <code>--appimage-extract-and-run</code>.</li>
+            </ol>
+            <p class="updates"><span class="ok soon"></span>Playhead tells you when a new build is out; download it and replace the file.</p>
+          </article>
+
+          <article class="platform" data-os="android-tv">
+            <header>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+              <h3>Android TV &amp; Google TV</h3>
+              <span class="chip mine-chip">Your system</span>
+            </header>
+            <p class="req">Android 7 or later · Chromecast with Google TV, Google TV Streamer, NVIDIA Shield, Sony, TCL, Hisense</p>
+            <a class="btn primary dl" data-asset="Playhead-android.apk" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-android.apk">
+              <span class="label">Download APK</span><span class="size" data-ext=".apk">.apk</span></a>
+            <p class="alt">
+              <a href="docs.html#android-tv">Install guide</a>
+              <a data-sha="Playhead-android.apk" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-android.apk.sha256">SHA-256</a>
+            </p>
+            <ol class="steps">
+              <li>On the TV, install <strong>Downloader</strong> from the Play Store (turn on developer mode first: select <em>Android TV OS build</em> seven times).</li>
+              <li>In Downloader enter <code class="tv-code">miloshampl.github.io/playhead-releases/apk</code> and install.</li>
+            </ol>
+            <p class="updates"><span class="ok"></span>Updates install themselves, right on the TV.</p>
+          </article>
+
+          <article class="platform" data-os="android">
+            <header>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5" /><path d="M11 18.5h2" /></svg>
+              <h3>Android phones &amp; tablets</h3>
+              <span class="chip mine-chip">Your system</span>
+            </header>
+            <p class="req">Android 7 or later · 32- and 64-bit ARM</p>
+            <a class="btn primary dl" data-asset="Playhead-android.apk" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-android.apk">
+              <span class="label">Download APK</span><span class="size" data-ext=".apk">.apk</span></a>
+            <p class="alt"><a data-sha="Playhead-android.apk" href="https://github.com/MilosHampl/playhead-releases/releases/latest/download/Playhead-android.apk.sha256">SHA-256</a></p>
+            <ol class="steps">
+              <li>Open the downloaded APK. Android asks to allow installs from your browser: allow it once.</li>
+              <li>It isn't in the Play Store; the same app runs on phones, tablets and TVs.</li>
+            </ol>
+            <p class="updates"><span class="ok"></span>Updates install themselves.</p>
+          </article>
+        </div>
+
+        <p class="all-releases">Older builds and their notes: <a href="https://github.com/MilosHampl/playhead-releases/releases">all releases on GitHub</a>.
+          Every file has a <code>.sha256</code> next to it.</p>
+      </div>
+    </section>
+
+    <section class="whats-new" id="whats-new">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="notes-title">What's new</h2>
+          <p id="notes-date">Release notes of the latest build.</p>
+        </div>
+        <div class="notes collapsed" id="notes">
+          <p>See the <a href="https://github.com/MilosHampl/playhead-releases/releases/latest">latest release on GitHub</a>.</p>
+        </div>
+        <button class="btn ghost notes-toggle" id="notes-toggle" type="button" hidden>Show all changes</button>
+      </div>
+    </section>
 
     <section class="private" id="private">
       <div class="wrap">
-        <h2>Private by design</h2>
+        <div class="section-head"><h2>Private by design</h2></div>
         <div class="pillars">
           <div class="pillar">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0" /><path d="M4 4l16 16" /></svg>
             <h3>No login</h3>
-            <p>No account and no sign-up. Open the app and browse; the movie and series catalogue is built in.</p>
+            <p>No account and no sign-up. Open the app and browse; the movie and series catalog is built in.</p>
           </div>
           <div class="pillar">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1.5" /><rect x="4" y="14" width="16" height="6" rx="1.5" /><path d="M3 21 21 3" /></svg>
@@ -61,105 +204,170 @@
           <div class="pillar">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
             <h3>Edge only</h3>
-            <p>Search, source ranking, streaming and playback run on your computer. Profiles, watch history and lists stay there too.</p>
+            <p>Search, source ranking, streaming and playback run on your device. Profiles, watch history and lists stay there too.</p>
           </div>
         </div>
-        <p class="leaves"><strong>What leaves your computer:</strong> requests to The Movie Database for posters and details, searches to the
+        <p class="leaves"><strong>What leaves your device:</strong> requests to The Movie Database for posters and details, searches to the
           Internet Archive and to any sources you add, indexer definitions from GitHub when you add an indexer, a check for a new
           version at launch and once a day, and BitTorrent traffic while you watch. Nothing else. The version check downloads one small static
-          file from this site — no account, no identifiers, no analytics — and can be turned off in Settings → About → Updates.</p>
+          file from this site (no account, no identifiers, no analytics) and can be turned off in Settings → About → Updates.</p>
       </div>
     </section>
 
-    <div class="wrap">
-      <figure class="shot" style="margin:0"><img src="assets/discover.jpg" alt="Playhead's Discover screen in the macOS window"></figure>
-    </div>
-
-    <section>
+    <section class="showcase">
       <div class="wrap">
-        <div class="note">
-          <strong>First launch on macOS.</strong> This test build isn't notarized by Apple, so macOS blocks it the first time:
-          <ol class="steps">
-            <li>Open the DMG and drag Playhead into Applications, then open it. macOS says it can't verify it — click <strong>Done</strong>.</li>
-            <li>Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down to "Playhead was blocked" and click <strong>Open Anyway</strong>.</li>
-            <li>Confirm with your password or Touch ID. You only do this once.</li>
-          </ol>
-          <strong>First launch on Windows.</strong> The installer isn't code-signed yet, so SmartScreen says "Windows protected your PC":
-          click <strong>More info → Run anyway</strong>. It installs for your user only, with no administrator prompt.
-          <strong>Linux.</strong> Make the AppImage executable (<code>chmod +x Playhead-linux-x86_64.AppImage</code>) and run it.
-          It needs FUSE 2 (<code>sudo apt install libfuse2</code>); without it run <code>./Playhead-linux-x86_64.AppImage --appimage-extract-and-run</code>.
-          <p style="margin:10px 0 0">After that, Playhead updates itself: when a new build is out it shows what changed and installs it with one click.</p>
-        </div>
+        <figure class="shot"><img src="assets/discover.jpg" alt="Playhead's Discover screen" loading="lazy"></figure>
       </div>
     </section>
 
     <section>
       <div class="wrap">
-        <h2>What it does</h2>
+        <div class="section-head"><h2>What it does</h2></div>
         <div class="grid">
           <div class="card"><h3>Starts in about a second</h3><p>Downloads the pieces just ahead of the playhead, so a good source starts playing almost at once, and seeks land in a few seconds.</p></div>
-          <div class="card"><h3>Bounded disk use</h3><p>Keeps a fixed-size cache (1 GB by default) no matter how big the file is, and removes it when you stop.</p></div>
-          <div class="card"><h3>Picks the best source</h3><p>Out of the box it plays public-domain films from the Internet Archive; other sources and indexers are yours to add, with no server to run. Releases are ranked by quality and their swarms checked live before playing; if one dies mid-film Playhead switches to the next.</p></div>
-          <div class="card"><h3>A proper player</h3><p>Hardware decoding, subtitles (SRT, ASS, PGS) with styling, audio and subtitle delay, chapters, mini player, keyboard shortcuts.</p></div>
-          <div class="card"><h3>Rich details</h3><p>Details for movies and series from The Movie Database: cast, crew, facts, trailers and collections. No setup needed.</p></div>
-          <div class="card"><h3>Profiles</h3><p>Separate watch history and lists per person, a guest mode, export to a file and sync between Macs through a folder.</p></div>
+          <div class="card"><h3>Bounded disk use</h3><p>A fixed-size cache, sized automatically from your free space, however big the file is. It's removed when you stop.</p></div>
+          <div class="card"><h3>Picks the best source</h3><p>Out of the box it plays public-domain films from the Internet Archive; other sources and indexers are yours to add, with no server to run. Releases are ranked by quality and their swarms checked live; if one stalls Playhead switches to the next.</p></div>
+          <div class="card"><h3>A proper player</h3><p>Hardware decoding, subtitles (SRT, ASS, PGS) with styling and online lookup, audio and subtitle delay, chapters, skip intro, keyboard shortcuts.</p></div>
+          <div class="card"><h3>Made for the couch</h3><p>Every screen works with a TV remote: rows remember where you were, sliders and menus work with OK and Back, and the player seeks with ◀ ▶.</p></div>
+          <div class="card"><h3>Profiles</h3><p>Separate watch history and lists per person, a kids profile with a PIN, a guest mode, export to a file and sync between devices through a folder.</p></div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="wrap shots">
-        <figure class="shot" style="margin:0"><img src="assets/detail.jpg" alt="Detail page with ranked sources"><figcaption>Detail page with the best source picked</figcaption></figure>
-        <figure class="shot" style="margin:0"><img src="assets/player.jpg" alt="Player with its menu open"><figcaption>Player menu: tracks, speed, aspect, chapters, sleep timer</figcaption></figure>
+        <figure class="shot"><img src="assets/detail.jpg" alt="Detail page with ranked sources" loading="lazy"><figcaption>Detail page with the best source picked</figcaption></figure>
+        <figure class="shot"><img src="assets/player.jpg" alt="Player with its menu open" loading="lazy"><figcaption>Player menu: tracks, speed, aspect, chapters, sleep timer</figcaption></figure>
       </div>
     </section>
 
     <section>
-      <div class="wrap">
-        <h2>Help and feedback</h2>
-        <p style="color:var(--text-2);margin:0">Read the <a href="docs.html">docs</a> for setup and tips.
-          Found a bug or want something? <a href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Open an issue</a> —
-          include the version from Settings → About and what you clicked.</p>
+      <div class="wrap help">
+        <div>
+          <h2>Help and feedback</h2>
+          <p>Read the <a href="docs.html">docs</a> for setup and tips. Found a bug or want something?
+            <a href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Open an issue</a>. Include the version from
+            Settings → About, and attach the diagnostics log from the same page if something broke.</p>
+        </div>
+        <a class="btn ghost" href="https://github.com/MilosHampl/playhead-releases/issues/new/choose">Report a problem</a>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <span>Playhead test build. Android is planned.</span>
+      <span class="foot-brand"><img src="assets/logo.svg" alt="">Playhead · test build</span>
       <span class="tmdb"><img src="assets/tmdb-logo.svg" alt="TMDB" height="10"> This application uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.</span>
       <span><a href="docs.html#licences">Open-source components</a></span>
     </div>
   </footer>
 
   <script>
-    // Windows and Linux visitors get their own download as the primary button.
-    if (/Windows/.test(navigator.userAgent)) {
-      const mac = document.getElementById('dl-mac'), win = document.getElementById('dl-win');
-      mac.classList.remove('primary'); win.classList.add('primary'); win.after(mac);
-    } else if (/Linux|X11/.test(navigator.userAgent) && !/Android/.test(navigator.userAgent)) {
-      const mac = document.getElementById('dl-mac'), lin = document.getElementById('dl-linux');
-      mac.classList.remove('primary'); lin.classList.add('primary'); lin.after(mac);
-    }
-    // Show the latest release's version; the static links above work without this.
-    fetch('https://api.github.com/repos/MilosHampl/playhead-releases/releases/latest')
-      .then(r => r.ok ? r.json() : Promise.reject(r.status))
-      .then(rel => {
-        const assets = rel.assets || [];
-        const dmg = assets.find(a => a.name.endsWith('.dmg'));
-        const exe = assets.find(a => a.name.endsWith('.exe'));
-        const appimage = assets.find(a => a.name.endsWith('.AppImage'));
-        const date = new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
-        document.getElementById('meta').textContent =
-          `${rel.name || rel.tag_name} · ${date} · macOS 12 or later (Apple Silicon and Intel) · Windows 10 or 11 (64-bit) · Linux (x86-64 AppImage) · Android TV and Google TV · updates itself`;
-        if (dmg) document.getElementById('dl-mac').href = dmg.browser_download_url;
-        if (exe) document.getElementById('dl-win').href = exe.browser_download_url;
-        else document.getElementById('dl-win').remove();
-        if (appimage) document.getElementById('dl-linux').href = appimage.browser_download_url;
-        else document.getElementById('dl-linux').remove();
-        if (!assets.some(a => a.name.endsWith('.apk'))) document.getElementById('dl-tv').remove();
-      })
-      .catch(() => {});
+    (() => {
+      const REPO = 'MilosHampl/playhead-releases';
+
+      // Which platform is this visitor on? Android with a TV-ish user agent counts as a TV.
+      const ua = navigator.userAgent;
+      const android = /Android/i.test(ua);
+      const os = android ? (/\bTV\b|AFT|BRAVIA|GoogleTV|SMART-TV|Chromecast|Shield/i.test(ua) ? 'android-tv' : 'android')
+        : /iPhone|iPad|iPod/.test(ua) ? null
+        : /Windows/.test(ua) ? 'windows'
+        : /Macintosh|Mac OS X/.test(ua) ? 'macos'
+        : /Linux|X11|CrOS/.test(ua) ? 'linux' : null;
+      const names = { macos: 'Mac', windows: 'Windows', linux: 'Linux', 'android-tv': 'Android TV', android: 'Android' };
+      const card = os && document.querySelector(`.platform[data-os="${os}"]`);
+      const heroDl = document.getElementById('hero-dl');
+      if (card) {
+        card.classList.add('mine');
+        const dl = card.querySelector('a.dl');
+        heroDl.href = dl.getAttribute('href');
+        heroDl.dataset.file = dl.dataset.asset;
+        document.getElementById('hero-dl-label').textContent = `Download for ${names[os]}`;
+      }
+
+      const fmt = (n) => n >= 1e9 ? `${(n / 1e9).toFixed(1)} GB` : `${Math.max(1, Math.round(n / 1e6))} MB`;
+      const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const inline = (s) => esc(s)
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2">$1</a>');
+
+      // Release notes: a small, safe Markdown subset (bold-line or # headings, bullets, paragraphs).
+      function renderNotes(md) {
+        const out = [];
+        let list = null;
+        const close = () => { if (list) { out.push(`<ul>${list.join('')}</ul>`); list = null; } };
+        for (const raw of md.replace(/\r/g, '').split('\n')) {
+          const line = raw.trimEnd();
+          if (!line.trim()) { close(); continue; }
+          const bullet = line.match(/^\s*[-*]\s+(.*)$/);
+          const heading = line.match(/^\s*(?:#{1,4}\s+(.*)|\*\*([^*]+)\*\*\s*)$/);
+          if (bullet) { (list ||= []).push(`<li>${inline(bullet[1])}</li>`); continue; }
+          close();
+          out.push(heading ? `<h3>${inline(heading[1] || heading[2])}</h3>` : `<p>${inline(line)}</p>`);
+        }
+        close();
+        return out.join('');
+      }
+
+      fetch(`https://api.github.com/repos/${REPO}/releases/latest`)
+        .then((r) => r.ok ? r.json() : Promise.reject(r.status))
+        .then((rel) => {
+          const assets = new Map((rel.assets || []).map((a) => [a.name, a]));
+          const date = new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+          const title = rel.name || rel.tag_name;
+          document.getElementById('hero-release').textContent = `${title} · ${date}`;
+          document.getElementById('release-line').textContent = `${title}, published ${date}. Every build keeps itself up to date.`;
+
+          // Download buttons and alternative files: real URL + size, or "not in this build".
+          document.querySelectorAll('[data-asset]').forEach((el) => {
+            const a = assets.get(el.dataset.asset);
+            const size = el.querySelector('.size');
+            if (a) {
+              el.href = a.browser_download_url;
+              if (size) size.textContent = size.dataset.ext ? `${size.dataset.ext} · ${fmt(a.size)}` : fmt(a.size);
+            } else if (el.classList.contains('dl')) {
+              el.classList.add('unavailable');
+              el.removeAttribute('href');
+              el.querySelector('.label').textContent = 'Not in this build';
+              if (size) size.textContent = '';
+            } else {
+              el.remove();
+            }
+          });
+          document.querySelectorAll('[data-sha]').forEach((el) => {
+            const a = assets.get(`${el.dataset.sha}.sha256`);
+            if (a) el.href = a.browser_download_url; else el.remove();
+          });
+          const mine = heroDl.dataset.file && assets.get(heroDl.dataset.file);
+          if (mine) {
+            heroDl.href = mine.browser_download_url;
+            document.getElementById('hero-meta').textContent = `${mine.name} · ${fmt(mine.size)} · free, and it updates itself.`;
+          } else if (heroDl.dataset.file) {
+            heroDl.href = '#download';
+            document.getElementById('hero-dl-label').textContent = 'See all platforms';
+          }
+
+          if (rel.body) {
+            document.getElementById('notes-title').textContent = `What's new in ${title.replace(/^Playhead\s+/, '')}`;
+            document.getElementById('notes-date').textContent = `Published ${date}.`;
+            const notes = document.getElementById('notes');
+            notes.innerHTML = renderNotes(rel.body);
+            const toggle = document.getElementById('notes-toggle');
+            if (notes.scrollHeight > notes.clientHeight + 40) {
+              toggle.hidden = false;
+              toggle.addEventListener('click', () => {
+                const open = !notes.classList.toggle('collapsed');
+                toggle.textContent = open ? 'Show less' : 'Show all changes';
+                if (!open) document.getElementById('whats-new').scrollIntoView({ block: 'start' });
+              });
+            } else {
+              notes.classList.remove('collapsed');
+            }
+          }
+        })
+        .catch(() => {});
+    })();
   </script>
 </body>
 </html>
