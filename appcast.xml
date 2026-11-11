@@ -6,57 +6,68 @@
     <description>Playhead update feed</description>
     <language>en</language>
     <item>
-      <title>Playhead 0.1.0 (build 19)</title>
-      <pubDate>Wed, 14 Oct 2026 13:41:55 +0000</pubDate>
-      <sparkle:version>19</sparkle:version>
+      <title>Playhead 0.1.0 (build 20)</title>
+      <pubDate>Wed, 11 Nov 2026 16:56:11 +0000</pubDate>
+      <sparkle:version>20</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.19</link>
-      <description sparkle:format="markdown"><![CDATA[**Now on Linux**
-- A Linux build (x86-64 AppImage) joins macOS, Windows and Android/Google TV. Download it, make it executable and run it; see the install notes on the download page.
+      <link>https://github.com/MilosHampl/playhead-releases/releases/tag/v0.1.0-test.20</link>
+      <description sparkle:format="markdown"><![CDATA[A polish, stability and performance release. No new features: this build is about things working the way you expect, above all on a TV.
 
-**A new logo**
-- The play button, cut into pieces like a torrent: the parts just after the playhead are in, one further on is still missing, the next one already arrived. It's now the app icon on every platform (macOS and Windows were still showing a placeholder) and the Android TV banner.
+**Finding and switching sources**
+- Play picks from more than the fastest answer. It used to start with whatever the first provider returned and never looked again; now it gives the other providers a moment, and everything the search finds later is kept as a fallback.
+- Far fewer needless switches. A source is no longer judged "stalling" while plenty of video is already downloaded ahead of you. On TVs with little memory this caused most of the unexplained switches.
+- Seeking no longer triggers a switch. Jumping to a new position gets its own waiting time.
+- A dead source gives way sooner. If another source already has data, Playhead moves to it after about 10 seconds instead of 25–40.
+- "Switch now" no longer takes the OK button. When the buffering panel appears, the highlighted button is the harmless one (Keep waiting or Choose source), so pressing OK to pause can't change the source.
+- You can see what is happening. The loading screen says which step it is on (searching, asking peers for the file list, connecting, loading the start with a percentage), which source this is ("Source 2 of 14") and why earlier ones were skipped. The error panel lists every source that was tried.
+- If the only source found fails and the search then finds another, playback carries on by itself.
 
-**TV remote, rebuilt**
-- Moving around works the same way on every screen. Each row, list and grid remembers where you were, so going back up lands on the poster you left. Left at the edge of a page always reaches the sidebar, and focus never jumps diagonally between rows.
-- Sliders: OK starts adjusting, ◀ ▶ change the value, OK or Back finishes. Otherwise the arrows just move past them.
-- Hold OK on a poster or episode to open its menu (most remotes have no Menu key).
-- The setup wizard works with a remote: OK presses the button you're on (it used to always jump to the next step) and Back goes to the previous step.
-- Every dialog opens with focus on a sensible button, and focus is always visible.
-- Faster: moving the focus no longer redraws posters, rows only scroll near their edges, the sidebar slides over the page instead of re-laying it out, and pages open with a lighter transition on TV.
+**Player no longer gets stuck**
+- A playback error in the middle of a film used to freeze the picture for good. The player now retries from the same position, and if that doesn't help it reconnects or moves to the next source.
+- If the player sits on "Buffering…" for 30 seconds while the download is healthy, it reconnects by itself.
+- Playback no longer pauses when a system panel (volume, assistant, input switcher) appears over the app.
+- Stopping a stuck source can no longer block the next Play.
+- Smoother on weak TVs: seeking with the remote lands faster, "back 10 seconds" replays from memory, and the on-screen controls redraw far less often.
+- The compatibility player uses much less memory on TVs and low-memory devices.
 
-**Episodes get their own screen**
-- Opening an episode (from a series, Up Next or Continue Watching) shows its still, description, progress and buttons — Resume, Start over, Choose source, Mark watched — with Resume ready, so OK, OK plays. Step to the next or previous episode from the same screen.
+**TV remote and navigation**
+- Back from a title returns to exactly where you were: same row, same poster, same scroll position.
+- Holding OK no longer repeats the press (no more starting playback from a held OK, no repeated PIN digits).
+- "See all", "Cast & crew" and "Remove from history" are reachable with the remote.
+- Episode lists keep focus while you move between an episode and its buttons; episode and season menus open with the first item highlighted.
+- After typing a search on TV, focus moves to the results.
+- Back while adjusting the seek bar cancels the jump instead of applying it.
+- The player's help screen keeps focus inside it; the TV player no longer shows the Fullscreen and external-player buttons, which did nothing there.
+- "Start over" stays on screen long enough to reach with the remote.
+- On a keyboard, "/" can be typed into text fields again.
 
-**Player**
-- On TV, Left/Right seek straight away with a small progress bar (hold to go faster: 10 s, then 30 s, then 60 s steps); Up/Down open the controls; OK pauses.
-- The controls stay up longer (8 s on TV, 5 s elsewhere).
-- Every player menu and dialog works with the remote, including Jump to time (new "More" button).
+**Faster browsing**
+- Movies and TV pages load rows as you scroll instead of all at once.
+- Search, person pages, History and the studio and network lists show a first page and a "Show more" button.
+- Smaller poster images are requested where posters are small.
 
-**Calmer source switching, and you can see what's happening**
-- Playhead only switches to another source after the current one has stalled for a while and the player is about to run dry, with a 15-second countdown. "Keep waiting" holds off for 2 minutes. A source that's still downloading is never dropped just because another one answered first.
-- While loading or buffering you see what's going on: the stage, download speed against what the video needs, connected peers, how much is buffered, and backup sources warming up. A switch is announced with the reason.
-- When the device runs out of storage you get "Storage is full" with a shortcut to the cache settings, instead of every source failing in turn.
-- Errors are in plain words, with the technical detail behind a Details button.
+**Stability**
+- "Try again" and "Reset" on the startup error screen work, and a reset keeps a backup copy of your library.
+- Reset on Windows and Linux only removes Playhead's own temporary files. Earlier builds emptied the system's shared temporary folder; if you used Reset there, other apps' temporary files may have been removed.
+- Quitting can no longer hang.
+- Pages that fail to load show the error and a Retry button straight away instead of a spinner for up to 40 seconds.
+- Offline, your lists no longer look empty: titles that can't be loaded stay in place.
+- Re-watching something no longer clears its "watched" mark, and Up Next no longer jumps to the next season after a network hiccup.
+- A TMDB key check now tells a rejected key from "couldn't reach TMDB".
+- Network settings say that they apply at the next start, and reject invalid ports and tracker addresses.
+- Testing a source in Settings no longer drops your other sources until the next search.
+- Recent searches keep what you searched for, not every pause in typing.
+- Indexer settings survive a crash or power loss during a save.
 
-**Clearer**
-- "No sources found" now says what was searched, how many results your quality settings hid (with "Show lower quality") and offers "Add sources".
-- Plainer wording across setup and Settings; a dead network option is gone, and advanced network options are grouped.
-- One style for empty pages, text fields and buttons; Settings is laid out more evenly.
-
-**Storage and stability**
-- The streaming cache size is now automatic: it's worked out from the device's free space and memory at each launch (Settings → Cache lets you set your own).
-- If Playhead can't start (for example a damaged database), it shows a screen with Try again and Reset instead of a blank window.
-- If the torrent engine fails to start, Playhead retries it automatically.
-- Catalog requests time out instead of hanging, and when you're offline the last known details are shown.
-- A diagnostics log (Settings → About) you can copy or save when reporting a problem.
-- Faster start-up and series pages, and fewer peers/threads on low-memory TVs.]]></description>
-      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.19/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="GFTXDukOA0s3dOlhwHG4XQD74e0/B8Sy1Wjv4O9ULQ2ZVc2mqQ2Ed+BoykVEHQr1ur4B5C0KZMhmKC6LwLsMAw==" length="83282302" />
+**Known gaps**
+- Downloads can't be started from the app yet; the Downloads list only shows existing ones.
+- On Android, adding online subtitles causes a brief pause once per title.]]></description>
+      <enclosure url="https://github.com/MilosHampl/playhead-releases/releases/download/v0.1.0-test.20/Playhead-macos.dmg" type="application/octet-stream" sparkle:os="macos" sparkle:edSignature="BL1CVLKJmXHn/8CAHYSFTRbfMSgJYNHZxJC9yiAS7dItV1BFzOu5uFdFw1PxEwvEmdtULgPrxSeujNpxbzP7Bw==" length="83460567" />
     </item>
   </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: /+5SSwsxQ+o8/m1AwdS4aO1MamDamn4MoTcte5dIvvL0CoOraIbOfUcqYIiYr16fSTRed8PLlXXzyaGs1TjFDw==
-length: 4997
+edSignature: HM1E7p/OUXT8u+/B8xM2I7ZdDLxMEmi9mkh/soW9XKodthhNaCHL4luCyxFnQu6RboU1Sl8Gzu6WOArvYzKrCw==
+length: 5758
 -->
